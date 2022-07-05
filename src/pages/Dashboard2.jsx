@@ -61,6 +61,7 @@ function Dashboard() {
   const [userprog, setuserprog] = useState(null);
   const [dailyGoal, setdailyGoal] = useState(null);
   const [testProg, settestProg] = useState([]);
+
   useEffect(() => {
     const fun = async (e) => {
       const response = await fetch(`${baseURL}/user/userProgress`, {
@@ -99,6 +100,11 @@ function Dashboard() {
     fun();
   }, []);
   // console.log("Hellllloooo guys", user);
+  console.log(progress);
+  console.log(userprog);
+  console.log(dailyGoal);
+  console.log(testProg);
+  console.log("hello");
   return (
     <Dash>
       {user && userprog ? (

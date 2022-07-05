@@ -7,7 +7,7 @@ import Loader from "../Loader";
 import { baseURL } from "../../Apis";
 
 function Learning(props) {
-  console.log("Helllo guys !!", props);
+  // console.log("Helllo guys !!", props);
   const [bought, setbought] = useState(1);
 
   useEffect(() => {

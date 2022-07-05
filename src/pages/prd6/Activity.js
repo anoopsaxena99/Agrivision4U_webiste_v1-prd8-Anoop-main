@@ -1,21 +1,41 @@
 import React from "react";
 import styles from "./activity.module.css";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 import {
   CircularProgressbar,
   buildStyles,
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import styled from "styled-components";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
+import CircleIcon from "@mui/icons-material/Circle";
 import food from "./food.jpg";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import Subjects from "./Subjects";
+
 function Activity({ items, name, courseId, progress }) {
+  // Active Button State
+  const [active, setActive] = React.useState(0);
+  const SetView = (active) => {
+    setActive(active);
+  };
+  let i = 0;
+  let x = items.chapters.map((c) => {
+    const v = {
+      id: i,
+      ChapterName: c.name,
+      ChapterId: c._id,
+      Topics: c.topics,
+    };
+    i = i + 1;
+    return v;
+  });
+  console.log(progress);
   const percentage = 12.5;
-  console.log(name);
   return (
     <>
       <div className={styles.container}>
@@ -48,50 +68,22 @@ function Activity({ items, name, courseId, progress }) {
           </div>
           <div className={styles.subjects}>
             <p className={styles.heading}>Start Learning</p>
-            <Design1>
-              <div className={styles.list}>
-                <CircleOutlinedIcon
-                  className={styles.icon}
-                ></CircleOutlinedIcon>
-                <p className={styles.point}>Chapter 1</p>
+            {x.map((subject) => (
+              <div
+                className={styles.list}
+                key={subject.id}
+                onClick={() => SetView(subject.id)}
+              >
+                {active === subject.id ? (
+                  <CircleIcon className="{styles.icon}"></CircleIcon>
+                ) : (
+                  <CircleOutlinedIcon
+                    className={styles.icon}
+                  ></CircleOutlinedIcon>
+                )}
+                <p className={styles.point}>{subject.ChapterName}</p>
               </div>
-              <div className={styles.list}>
-                <CircleOutlinedIcon
-                  className={styles.icon}
-                ></CircleOutlinedIcon>
-                <p className={styles.point}>Chapter 2</p>
-              </div>
-              <div className={styles.list}>
-                <CircleOutlinedIcon
-                  className={styles.icon}
-                ></CircleOutlinedIcon>
-                <p className={styles.point}>Chapter 3</p>
-              </div>
-              <div className={styles.list}>
-                <CircleOutlinedIcon
-                  className={styles.icon}
-                ></CircleOutlinedIcon>
-                <p className={styles.point}>Chapter 4</p>
-              </div>
-              <div className={styles.list}>
-                <CircleOutlinedIcon
-                  className={styles.icon}
-                ></CircleOutlinedIcon>
-                <p className={styles.point}>Chapter 5</p>
-              </div>
-              <div className={styles.list}>
-                <CircleOutlinedIcon
-                  className={styles.icon}
-                ></CircleOutlinedIcon>
-                <p className={styles.point}>Chapter 6</p>
-              </div>
-              <div className={styles.list}>
-                <CircleOutlinedIcon
-                  className={styles.icon}
-                ></CircleOutlinedIcon>
-                <p className={styles.point}>Chapter 7</p>
-              </div>
-            </Design1>
+            ))}
           </div>
         </div>
         <div className={styles.right}>
@@ -117,7 +109,7 @@ function Activity({ items, name, courseId, progress }) {
           </div>
           <div className={styles.lower}>
             <div className={styles.lowerTop}>
-              <p className={styles.lowerHeading}>Mathematics</p>
+              <p className={styles.lowerHeading}>{x[active].ChapterName}</p>
               <div className={styles.horizontalProgressBar}>
                 <div className={styles.horizontalbar}>
                   <div
@@ -130,35 +122,22 @@ function Activity({ items, name, courseId, progress }) {
             </div>
             <div className={styles.lowerBottom}>
               <div className={styles.lowerBottomOptions}>
-                <div className={styles.lowerBottomPoints}>
-                  <CheckCircleRoundedIcon
-                    className={styles.lowerBottomicons}
-                  ></CheckCircleRoundedIcon>
-                  <p className={styles.lowerBottomText}>Chap1Topic1</p>
-                </div>
-                <div className={styles.lowerBottomPoints}>
-                  <CheckCircleRoundedIcon
-                    className={styles.lowerBottomicons}
-                  ></CheckCircleRoundedIcon>
-                  <p className={styles.lowerBottomText}>Chap1Topic2</p>
-                </div>
-
-                <div className={styles.lowerBottomPoints}>
-                  <CheckCircleRoundedIcon
-                    className={styles.lowerBottomicons}
-                  ></CheckCircleRoundedIcon>
-                  <p className={styles.lowerBottomText}>Chap1Topic3</p>
-                </div>
-                <div className={styles.lowerBottomPoints}>
-                  <CheckCircleRoundedIcon
-                    className={styles.lowerBottomicons}
-                  ></CheckCircleRoundedIcon>
-                  <p className={styles.lowerBottomText}>Chap1Topic4</p>
-                </div>
+                {x[active].Topics.map((Topic) => (
+                  <div className={styles.lowerBottomPoints}>
+                    <CheckCircleRoundedIcon
+                      className={styles.lowerBottomicons}
+                    ></CheckCircleRoundedIcon>
+                    <p className={styles.lowerBottomText}>{Topic.name}</p>
+                  </div>
+                ))}
               </div>
-              <button className={styles.lowerBottomButton}>
-                Resume Learning
-              </button>
+              <ViewLink
+                to={{ pathname: `/course/${courseId}/${x[active].ChapterId}` }}
+              >
+                <button className={styles.lowerBottomButton}>
+                  Resume Learning
+                </button>
+              </ViewLink>
             </div>
           </div>
         </div>
@@ -166,10 +145,7 @@ function Activity({ items, name, courseId, progress }) {
     </>
   );
 }
-
-const Design1 = styled.div`
-  display: flex;
-  flex-direction: column;
+const ViewLink = styled(Link)`
+  text-decoration: none;
 `;
-
 export default Activity;

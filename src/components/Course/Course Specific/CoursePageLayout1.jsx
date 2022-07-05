@@ -11,7 +11,6 @@ export const Layout = ({ courseId }) => {
   const [items, setItems] = useState(null);
   const [cname, setname] = useState(null);
   const { width } = useWindowDimensions();
-  const progress = null;
 
   useEffect(() => {
     const fun = async (e) => {
@@ -34,6 +33,27 @@ export const Layout = ({ courseId }) => {
     fun();
     // eslint-disable-next-line
   }, []);
+
+  const [user, setuser] = useState(null);
+  useEffect(() => {
+    const fun = async (e) => {
+      const response = await fetch(`${baseURL}/user/profile`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const json = await response.json();
+      if (json.success) {
+        setuser(json.data);
+      }
+    };
+    fun();
+  }, []);
+
+  console.log(user);
+
   return items ? (
     <>
       <Navbar course rhead={cname} />
@@ -41,7 +61,7 @@ export const Layout = ({ courseId }) => {
         items={items}
         name={cname}
         courseId={courseId}
-        progress={progress}
+        progress={user}
       />
     </>
   ) : (
