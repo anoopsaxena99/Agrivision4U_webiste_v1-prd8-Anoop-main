@@ -1,0 +1,81 @@
+.AlertContainer{
+    background: #FEFEFE;
+    border-radius: 12px;    
+    font-family: 'Roboto';
+   
+    font-style: normal;
+    margin: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: #FFFFFF;
+    padding: 2%;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+border-radius: 12px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.dot{
+    height: 25px;
+    width: 25px;
+    background-color:#E59819;
+    border-radius: 50%;
+    display: inline-block;
+}
+.course{
+    font-weight: 400;
+    color :#474A50;
+    font-size: 120%;
+}
+.courseTiming{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    color :#474A50;
+    font-size: 155%;
+}
+.courseBatch{
+    color :#474A50;
+    font-weight: 400;
+    font-size: 120%;
+}
+.mid{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.midHeading{
+    color: #0B6E4F;
+    font-weight: 700;
+    font-size: 140%;
+    
+}
+.midSubContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.text{
+    color: #474A50;
+    text-align: start;
+    font-size: 110%;
+}
+.textP{
+    color: #474A50;
+    font-size: 110%;
+}
+.bottomContainer{
+    display: flex;
+    justify-content: center;
+}
+.bottom{
+    width: 60%;
+    background: rgba(196, 196, 196, 0.5);
+    border-radius: 12px;
+    display: flex;
+    padding: 10%;
+    margin-bottom: 3%;
+    justify-content: center;
+}
