@@ -75,7 +75,7 @@ function Activity({ items, name, courseId, progress }) {
                 onClick={() => SetView(subject.id)}
               >
                 {active === subject.id ? (
-                  <CircleIcon className="{styles.icon}"></CircleIcon>
+                  <CircleIcon className={styles.icon}></CircleIcon>
                 ) : (
                   <CircleOutlinedIcon
                     className={styles.icon}
