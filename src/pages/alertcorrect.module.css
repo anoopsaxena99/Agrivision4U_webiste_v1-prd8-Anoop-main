@@ -1,81 +1,127 @@
-.AlertContainer{
-    background: #FEFEFE;
-    border-radius: 12px;    
-    font-family: 'Roboto';
-   
-    font-style: normal;
-    margin: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
-    background: #FFFFFF;
-    padding: 2%;
-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
-border-radius: 12px;
+.AlertContainer {
+  background: #fefefe;
+  border-radius: 12px;
+  font-family: "Roboto";
+
+  font-style: normal;
+  margin-bottom: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background: #ffffff;
+  padding: 2%;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
 }
-.top{
-    display: flex;
-    justify-content: space-between;
+.top {
+  display: flex;
+  justify-content: space-between;
 }
-.dot{
-    height: 25px;
-    width: 25px;
-    background-color:#E59819;
-    border-radius: 50%;
-    display: inline-block;
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #e59819;
+  border-radius: 50%;
+  display: inline-block;
 }
-.course{
+.course {
+  font-weight: 400;
+  color: #474a50;
+  font-size: 120%;
+}
+.courseTiming {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: #474a50;
+  font-size: 150%;
+}
+.courseBatch {
+  color: #474a50;
+  font-weight: 400;
+  font-size: 120%;
+}
+.mid {
+  /* width: 30%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.midHeading {
+  color: #0b6e4f;
+  font-weight: 700;
+  font-size: 130%;
+}
+.midSubContainer {
+  display: flex;
+  gap: 2%;
+}
+.text {
+  width: 30%;
+  color: #474a50;
+  text-align: start;
+  font-size: 110%;
+  margin: 0;
+  margin-bottom: 2%;
+}
+.textP {
+  width: 10%;
+  color: #474a50;
+  font-size: 110%;
+  margin: 0;
+  margin-bottom: 2%;
+}
+.bottomContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 2%;
+}
+.bottom {
+  width: 80%;
+  background: rgba(196, 196, 196, 0.5);
+  border-radius: 12px;
+  display: flex;
+  padding: 10%;
+  margin-bottom: 3%;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .course {
     font-weight: 400;
-    color :#474A50;
-    font-size: 120%;
-}
-.courseTiming{
+    color: #474a50;
+    font-size: 90%;
+  }
+  .courseTiming {
     display: flex;
     align-items: center;
     gap: 5px;
     font-weight: 600;
-    color :#474A50;
-    font-size: 155%;
-}
-.courseBatch{
-    color :#474A50;
+    color: #474a50;
+    font-size: 100%;
+  }
+  .courseBatch {
+    color: #474a50;
     font-weight: 400;
-    font-size: 120%;
-}
-.mid{
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-}
-
-.midHeading{
-    color: #0B6E4F;
+    font-size: 90%;
+  }
+  .midHeading {
+    color: #0b6e4f;
     font-weight: 700;
-    font-size: 140%;
-    
-}
-.midSubContainer{
-    display: flex;
-    justify-content: space-between;
-}
-.text{
-    color: #474A50;
+    font-size: 100%;
+  }
+  .text {
+    color: #474a50;
     text-align: start;
-    font-size: 110%;
-}
-.textP{
-    color: #474A50;
-    font-size: 110%;
-}
-.bottomContainer{
-    display: flex;
-    justify-content: center;
-}
-.bottom{
-    width: 60%;
-    background: rgba(196, 196, 196, 0.5);
-    border-radius: 12px;
-    display: flex;
-    padding: 10%;
-    margin-bottom: 3%;
-    justify-content: center;
+    font-size: 100%;
+    margin: 0;
+    margin-bottom: 2%;
+  }
+  .textP {
+    color: #474a50;
+    font-size: 100%;
+    margin: 0;
+    margin-bottom: 2%;
+  }
 }

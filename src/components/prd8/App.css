@@ -3,9 +3,9 @@
   padding: 12%;
   margin-top: -5%;
 }
-body{
+body {
   word-spacing: 0px;
-  letter-spacing: 0px!important;
+  letter-spacing: 0px !important;
 }
 .title {
   font-size: 30px;
@@ -254,12 +254,11 @@ body{
   margin-bottom: 1vw;
   width: 10vw;
 }
-.horizontalscrollbar{
+.horizontalscrollbar {
   max-width: 80vw;
-  
 }
 .testki {
- width: 100%;
+  width: 100%;
   display: flex;
   gap: 5%;
   padding-bottom: 1%;
@@ -267,13 +266,13 @@ body{
 }
 .testki2 {
   width: 100%;
-   display: flex;
-   align-items: center;
-   /* justify-content: space-around; */
-   gap: 5%;
-   padding-bottom: 2%;
-   overflow-x: auto;
- }
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  gap: 5%;
+  padding-bottom: 2%;
+  overflow-x: auto;
+}
 .card5,
 .card6,
 .card7 {
@@ -546,9 +545,7 @@ h1 {
 
 .App {
   font-family: sans-serif;
-  text-align: center;
   background: #fff;
   color: #fff;
-  letter-spacing: 0.25em;
-  height: 100vh;
+  border-style: none;
 }
