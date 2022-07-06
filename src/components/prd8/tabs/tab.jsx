@@ -5,6 +5,7 @@ import Appun from "../testseries/Test/yes";
 import Courses from "../../../pages/Courses";
 const TabsContainer = styled.div`
   display: flex;
+  justify-content: flex-start;
   padding: 2px;
 `;
 
@@ -25,13 +26,13 @@ export default function Appa({ user, userprog }) {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center",
       }}
     >
       <TabsContainer>
         <Tabs selectedTab={activeTab} onChange={handleChange}>
-          <Tab label="My courses" value={0} ></Tab>
+          <Tab label="My courses" value={0}></Tab>
           <Tab label="My Test-Series" value={1}></Tab>
         </Tabs>
       </TabsContainer>

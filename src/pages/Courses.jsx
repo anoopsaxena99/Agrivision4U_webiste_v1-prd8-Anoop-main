@@ -15,9 +15,7 @@ import MyCalendar from "../components/Dashboard/MyCalendar.js";
 const Courses = ({ course }) => {
   const renderSlides = () =>
     [1, 2, 3, 4, 5, 6].map((num) => (
-      <div
-        style={{ display: "flex", flexDirection: "column", marginTop: "500px" }}
-      >
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <div className={styles.box2}>
           <div className={styles.left}>
             <div className={styles.box2mini}></div>
@@ -115,6 +113,7 @@ const Courses = ({ course }) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          marginBottom: "5%",
         }}
       >
         <courseCssProperties
@@ -137,14 +136,14 @@ const Courses = ({ course }) => {
           </Slider>
           <button
             className={styles.button2}
-            style={{ float: "left", marginLeft: "9vw" }}
+            style={{ float: "left", marginLeft: "9vw", marginBottom: "4%" }}
             onClick={() => slider.current.slickPrev()}
           >
             Previous
           </button>
           <button
             className={styles.button2}
-            style={{ float: "right", marginRight: "8vw" }}
+            style={{ float: "right", marginRight: "8vw", marginBottom: "5%" }}
             onClick={() => slider.current.slickNext()}
           >
             Next

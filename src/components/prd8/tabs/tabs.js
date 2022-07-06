@@ -6,7 +6,7 @@ import {
   StyledTabPanel,
   TabsHolder,
   inactiveTab,
-  TabSlider
+  TabSlider,
 } from "./styles";
 
 export const Tab = ({ label, active, onClick }) => {
@@ -16,6 +16,14 @@ export const Tab = ({ label, active, onClick }) => {
       active={active}
       onClick={onClick}
       inactiveStyle={inactiveTab}
+      style={{
+        margin: "0%",
+        padding: "0%",
+        width: "200px",
+        height: "50px",
+        marginRight: "10px",
+        marginBottom: "30px",
+      }}
     >
       {label}
     </StylizedTab>
@@ -40,7 +48,7 @@ export const Tabs = ({ selectedTab, onChange, children }) => {
     return React.cloneElement(child, {
       key: child.props.value,
       active: child.props.value === selectedTab,
-      onClick: handleClick
+      onClick: handleClick,
     });
   });
 

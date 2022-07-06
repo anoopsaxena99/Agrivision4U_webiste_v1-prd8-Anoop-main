@@ -8,7 +8,7 @@ import styled from "styled-components";
 // import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { baseURL } from "../../../../Apis";
-import styles   from "./testDetails.module.css";
+import styles from "./testDetails.module.css";
 import { style } from "@mui/system";
 export default function TestDetailCard({ test }) {
   // const [testDetail, settestDetail] = useState(null);
@@ -33,46 +33,46 @@ export default function TestDetailCard({ test }) {
   // }, []);
   // console.log(testDetail);
   return (
-    <Card className="card5" style={{minWidth:"320px", padding:"3px"}}>
+    <div className={styles.cardContainer}>
       <div className={styles.imgContainer}>
         <img className={styles.img} src="images/images/m2.jpeg" alt="/" />
       </div>
-      <Container className="list55">
+      <div className={styles.list}>
         <p className={styles.title}>{test.name}</p>
-        <div className="sel">
-          <span>1.2k Students enrolled</span>
+        <div className={styles.table}>
+          <p className={styles.enrolled}>1.2k Students enrolled</p>
           <Row>
             <Col>
-              <FaRegCheckCircle className="circle"></FaRegCheckCircle>
-              <span className="text2">{test.totalQuizzes} Total Quizzes</span>
+              <FaRegCheckCircle className={styles.icon}></FaRegCheckCircle>
+              <span className={styles.points}>
+                {test.totalQuizzes} Total Quizzes
+              </span>
             </Col>
           </Row>
           <Row>
             <Col>
-              <FaRegCheckCircle className="circle"></FaRegCheckCircle>
-              <span className="text2">0 Sectional tests</span>
+              <FaRegCheckCircle className={styles.icon}></FaRegCheckCircle>
+              <span className={styles.points}>0 Sectional tests</span>
             </Col>
           </Row>
           <Row>
             <Col>
-              <FaRegCheckCircle className="circle"></FaRegCheckCircle>
-              <span className="text2">8 Previous Tests</span>
+              <FaRegCheckCircle className={styles.icon}></FaRegCheckCircle>
+              <span className={styles.points}>8 Previous Tests</span>
             </Col>
           </Row>
           <Row>
             <Col>
-              <FaRegCheckCircle className="circle"></FaRegCheckCircle>
-              <span className="text2">8 Mockups</span>
+              <FaRegCheckCircle className={styles.icon}></FaRegCheckCircle>
+              <span className={styles.points}>8 Mockups</span>
             </Col>
           </Row>
         </div>
         <ViewLink to={{ pathname: `/testseries/${test._id}` }}>
-        
-            <button className={styles.button}>Take Test</button>
-         
+          <button className={styles.button}>Take Test</button>
         </ViewLink>
-      </Container>
-    </Card>
+      </div>
+    </div>
   );
 }
 const ViewLink = styled(Link)`

@@ -4,7 +4,7 @@ export const TabHeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 47%;
+  margin-top: 10%;
   margin-left: 0%;
   padding: 0vw;
   @media screen and (max-width: 900px) {
@@ -52,7 +52,6 @@ export const StyledTabPanel = styled.div`
   width: 100%;
   color: black;
   text-align: center;
-  height: 10%;
   justify-content: center;
   @media screen and (max-width: 601px) {
     width: 100%;
