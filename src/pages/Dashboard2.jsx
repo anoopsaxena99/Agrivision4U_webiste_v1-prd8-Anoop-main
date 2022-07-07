@@ -118,7 +118,7 @@ function Dashboard() {
           {/* the top card */}
           <AlertCorrect></AlertCorrect>
           {/* the video button  */}
-          <Appa user={user} userprog={userprog} />
+          <Appa user={user} userprog={userprog} />  {/*!!!!!!!!!!!!!!!!!!*/}
           {/* the two buttons */}
           <CardCorrect></CardCorrect>
           {/* the refer and earn card */}

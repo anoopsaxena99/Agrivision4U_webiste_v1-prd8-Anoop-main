@@ -7,7 +7,7 @@ import {
   TabsHolder,
   inactiveTab,
   TabSlider
-} from "./styles";
+} from "./styless";
 
 export const Tab = ({ label, active, onClick }) => {
   return (
