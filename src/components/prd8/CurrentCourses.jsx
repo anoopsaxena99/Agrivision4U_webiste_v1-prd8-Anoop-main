@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../pages/Styles.css";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import DoneIcon from "@mui/icons-material/Done";
 import { baseURL } from "../../Apis";

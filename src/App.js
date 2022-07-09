@@ -40,12 +40,13 @@ import TrialPackage from "./pages/Courses/TrialPackage";
 import TrialCourse from "./pages/Courses/TrialCourse";
 import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
-
+import CoursePages from "./pages/prd2/link"
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/prd2" exact component={CoursePages} />
         <Route path="/aboutUs" exact component={AboutUs} />
         <Route path="/whychooseus" exact component={WhyChoose} />
         <Route path="/terms" exact component={TandC} />

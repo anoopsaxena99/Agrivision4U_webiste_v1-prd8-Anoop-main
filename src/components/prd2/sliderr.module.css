@@ -1,0 +1,57 @@
+.SliderContainer{
+    display: flex;
+    padding: 3%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13);
+    border-radius: 12px;
+    margin-bottom: 5%;
+    gap: 2%;
+}
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+}
+.img{
+    width: 100%;
+}
+.cardHeading{
+    color: #128863;
+  margin-left: 3px;
+  font-weight: bold;
+  margin-top: 1%;
+}
+.cardEnrolled{
+    font-size: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  color: #5f5f5f;
+  margin-left: 2%;
+  margin-top: -20px;
+}
+.cardProductRating{
+    padding-left: 5%;
+    margin-top: -25px;
+    font-family: "Roboto";
+}
+.cardRating{
+    color: #e59819;
+  font-size: 17px;
+  line-height: 30px;
+  margin-left: -9px;
+}
+.cardStar{
+    padding: 3%;
+    padding-top: 0%;
+    padding-right: 1%;
+    color: #e59819;
+}
+.cardDetails{
+    font-size: 15px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px;
+    color: #5f5f5f;
+}

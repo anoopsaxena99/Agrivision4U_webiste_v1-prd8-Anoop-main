@@ -4,6 +4,8 @@ import { Tabs, Tab, TabPanel } from "../../components/prd2/tabs/tabbs";
 import Card1 from "./cardd";
 import "./Coursepage.css";
 import Aplp from "./slide";
+import Appk from "./gatetab"
+
 const TabsContainer = styled.div`
   display: flex;
   padding: 2px;
@@ -41,8 +43,9 @@ export default function Appa() {
               Nbcnt per conubia nostra, per inceptos himenaeos. ante dapibus
               diam.
             </div>
-            <Card1/>
-          <span className="heading">
+            <Appk/>
+            {/* <Card1/> */}
+          <span className="heading7">
             <span className="heading1">GATE - Subject Wise Preparation Packages</span>
           </span>
           <Aplp/>
@@ -59,8 +62,9 @@ export default function Appa() {
               Nbcnt per conubia nostra, per inceptos himenaeos. ante dapibus
               diam.
             </div>
-            <Card1/>
-          <span className="heading">
+            {/* <Card1/> */}
+            <Appk/>
+          <span className="heading7">
             <span className="heading1">CFTRI - Subject Wise Preparation Packages</span>
           </span>
           <Aplp/>
