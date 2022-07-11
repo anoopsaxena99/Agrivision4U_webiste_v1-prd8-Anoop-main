@@ -41,6 +41,8 @@ import TrialCourse from "./pages/Courses/TrialCourse";
 import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
 import CoursePages from "./pages/prd2/link";
+import SectionTopic from "./pages/SectionTopicPage";
+
 function App() {
   return (
     <Router>
@@ -57,7 +59,7 @@ function App() {
         <Route path="/courses/exam=:name" exact component={Coursenames} />
         <Route path="/courses/subject=:name" exact component={Topicnames} />
         <ProtectedRoute path="/course/:id" exact component={Learning} />
-        <ProtectedRoute path="/course/:id1/:id2" exact component={Chapter} />
+        <ProtectedRoute path="/course/:id1/:id2" exact component={SectionTopic} />
         <ProtectedRoute path="/package/:id" exact component={Package} />
         <ProtectedRoute path="/register/:id" exact component={Register} />
 
