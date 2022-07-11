@@ -4,7 +4,9 @@ import { Tabs, Tab, TabPanel } from "../../components/prd2/tabs/tabbs";
 import Card1 from "./cardd";
 import "./Coursepage.css";
 import Aplp from "./slide";
-import Appk from "./gatetab"
+import Appk from "./gatetab";
+import Sliderrr2 from "./Sliderrr2";
+import ContentPackage from "./ContentPackage";
 
 const TabsContainer = styled.div`
   display: flex;
@@ -17,9 +19,11 @@ const TabsContainer = styled.div`
 
 export default function Appa() {
   const [activeTab, setActiveTab] = useState(0);
-
+  const Map = ["GATE", "CFTRI", "CFS/SO", "ICAR"];
+  const [Exam, setExam] = useState("GATE");
   const handleChange = (e, value) => {
     setActiveTab(value);
+    setExam(Map[value]);
   };
 
   return (
@@ -32,49 +36,9 @@ export default function Appa() {
           <Tab label="ICAR" value={3}></Tab>
         </Tabs>
       </TabsContainer>
-        <TabPanel value={activeTab} selectedIndex={0}>
-        <span className="heading">
-            <span className="heading1">GATE - </span>
-            Winner's Preparation Package
-          </span>
-          <div className="description">
-              WLorem ipsum dolor sit amet, consectetur ad ipiscing elit. Integer
-              nec odio. Praesent libero Sed cursus ante dapibus diam. Sed nisi.
-              Nbcnt per conubia nostra, per inceptos himenaeos. ante dapibus
-              diam.
-            </div>
-            <Appk/>
-            {/* <Card1/> */}
-          <span className="heading7">
-            <span className="heading1">GATE - Subject Wise Preparation Packages</span>
-          </span>
-          <Aplp/>
-        </TabPanel>
-        <TabPanel value={activeTab} selectedIndex={1}>
-       
-            <span className="heading">
-              <span className="heading1">CFTRI- </span>
-              Winner's Preparation Package
-            </span>
-            <div className="description">
-              WLorem ipsum dolor sit amet, consectetur ad ipiscing elit. Integer
-              nec odio. Praesent libero Sed cursus ante dapibus diam. Sed nisi.
-              Nbcnt per conubia nostra, per inceptos himenaeos. ante dapibus
-              diam.
-            </div>
-            {/* <Card1/> */}
-            <Appk/>
-          <span className="heading7">
-            <span className="heading1">CFTRI - Subject Wise Preparation Packages</span>
-          </span>
-          <Aplp/>
-        </TabPanel>
-        <TabPanel value={activeTab} selectedIndex={2}>
-          
-        </TabPanel>
-        <TabPanel value={activeTab} selectedIndex={3}>
-        
-        </TabPanel>
+      <TabPanel value={activeTab} selectedIndex={activeTab}>
+        <ContentPackage subject={Exam} />
+      </TabPanel>
     </div>
   );
 }

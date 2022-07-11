@@ -87,8 +87,7 @@ const Layout = () => {
     fun();
     // eslint-disable-next-line
   }, []);
-
-
+  console.log(packs);
   return (
     <>
     {/* <ToastContainer /> */}

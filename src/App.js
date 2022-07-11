@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Courses from "./pages/Courses/Courses";
+import Courses from "./pages/Courses/Courses1";
 import CourseDashboard from "./components/Course/Course Dashboard/CourseDashboard";
 import Login from "./pages/Login";
 import AboutUs from "./components/global/Footer Writeup/AboutUs";
@@ -40,7 +40,7 @@ import TrialPackage from "./pages/Courses/TrialPackage";
 import TrialCourse from "./pages/Courses/TrialCourse";
 import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
-import CoursePages from "./pages/prd2/link"
+import CoursePages from "./pages/prd2/link";
 function App() {
   return (
     <Router>

@@ -5,10 +5,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 //import { FaStar } from "react-icons/fa";
 import Feature from "../../components/prd2/Feature/Feature";
+import { useState } from "react";
 // import { SlideFocus } from "embla-carousel/embla-carousel-vanilla/slideFocus";
 //import styled from 'styled-components';
-function ImageSlider2({ value }) {
-    console.log(value);
+function ImageSlider2({ pack, value }) {
+  // console.log(value);
   let settings = {
     dots: true,
     infinite: false,
@@ -16,53 +17,23 @@ function ImageSlider2({ value }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: value,
-    
   };
 
   return (
     <Slider {...settings} className="sli">
-      <div className="card-wrapper7">
-        <div className="cardy7">
-          <div className="card-ima7">
-            <Feature />
-          </div>
-        </div>
-      </div>
-      <div className="card-wrapper7">
-        <div className="cardy7">
-          <div className="card-ima7">
-            <Feature />
-          </div>
-        </div>
-      </div>
-      <div className="card-wrapper7">
-        <div className="cardy7">
-          <div className="card-ima7">
-            <Feature />
-          </div>
-        </div>
-      </div>
-      <div className="card-wrapper7">
-        <div className="cardy7">
-          <div className="card-ima7">
-            <Feature />
-          </div>
-        </div>
-      </div>
-      <div className="card-wrapper7">
-        <div className="cardy7">
-          <div className="card-ima7">
-            <Feature />
-          </div>
-        </div>
-      </div>
-      <div className="card-wrapper7">
-        <div className="cardy7">
-          <div className="card-ima7">
-            <Feature />
-          </div>
-        </div>
-      </div>
+      {pack.map((p, i) => {
+        return (
+          <>
+            <div className="card-wrapper7">
+              <div className="cardy7">
+                <div className="card-ima7">
+                  <Feature onepack={p} />
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })}
     </Slider>
   );
 }
