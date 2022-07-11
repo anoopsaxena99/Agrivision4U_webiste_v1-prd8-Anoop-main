@@ -11,6 +11,9 @@ import styles from "./styles.module.css";
 //import Sarthak from "../../components/prd6/Topic/NavBar";
 const TabsContainer = styled.div`
   display: flex;
+  overflow-y: auto;
+  justify-content: space-between;
+  max-height:500px;
   padding: 2px;
 `;
 
@@ -26,10 +29,14 @@ export default function Appk({ pack }) {
     setActiveTab(value);
   };
 
+  
+
   return (
     <div>
       <div>
         <TabsContainer className={styles.nav2}>
+          <div >
+            
           <Tabs
             className={styles.lines}
             selectedTab={activeTab}
@@ -50,6 +57,7 @@ export default function Appk({ pack }) {
               );
             })}
           </Tabs>
+          </div>
         </TabsContainer>
         <TabPanelContainer>
           {pack.map((p, i) => {
@@ -70,4 +78,11 @@ export default function Appk({ pack }) {
       </div>
     </div>
   );
+
+  const DashCardWrapper = styled.div`
+  display: flex;
+  // justify-content: space-between;
+  overflow-y: auto;
+
+`;
 }
