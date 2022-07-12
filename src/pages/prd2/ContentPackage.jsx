@@ -5,6 +5,8 @@ import Appk from "./gatetab";
 import "./Coursepage.css";
 import { useState, useEffect } from "react";
 import { baseURL } from "../../Apis";
+import Loader from "../Loader";
+
 
 function ContentPackage({ subject }) {
   const [packs, setpacks] = useState(null);
@@ -41,7 +43,8 @@ function ContentPackage({ subject }) {
   subjects = Array.from(subjects);
 
   return (
-    <>
+    <>{ pack.length?
+      (<>
       <span className="heading">
         <span className="heading1">{subject} -2016 </span>
         Winner's Preparation Package
@@ -59,7 +62,9 @@ function ContentPackage({ subject }) {
         </span>
       </span>
       <Aplp subjects={subjects} />
-    </>
+    </>):( subject=="CFS/SO" || subject=="ICAR" ?(<img src="/images/coming-soon.svg" 
+    alt="coming-soon" style={{height:'600px' ,'margin-left':'250px'}}></img>):(<Loader/>))
+    }</>
   );
 }
 
