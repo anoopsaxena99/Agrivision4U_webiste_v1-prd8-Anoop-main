@@ -4,6 +4,8 @@ import { useState , useEffect} from "react";
 import { baseURL } from "../../../Apis"
 import image1 from "./image 111.jpg";
 import moment from "moment"
+import LiveClass from "./imglive.jpg"
+import Loader from "../../../pages/Loader";
 function LiveClasses({courseId}) {
   const [data, setData] = useState(null);
 
@@ -27,15 +29,16 @@ function LiveClasses({courseId}) {
 
 
 if(data) {
-  var time = data.liveClass.dateTime;
-  console.log();
+  var time = data.liveClass===undefined ? null:data.liveClass.dateTime ;
+  // console.log();
   
 }
 
   return (
     <>
-    
-    {data ? (
+    {!data?(<Loader/>) : (
+      <>
+    {(data && data.liveClass!=undefined) ? (
       <div className={styles.container}>
         <div className={styles.left}>
         </div>
@@ -71,8 +74,11 @@ if(data) {
           </div>
         </div>
       </div>
-    ) : (<></>)}
+    ) : (<img src={LiveClass} alt="Live-Class" style={{width: "65%", height: "auto" ,'margin-left':'33%'}} />)}
     </>
+    )}
+    </>
+   
   );
 }
 export default LiveClasses;
