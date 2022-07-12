@@ -42,12 +42,14 @@ import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
 import CoursePages from "./pages/prd2/link";
 import SectionTopic from "./pages/SectionTopicPage";
+import Test from "./pages/prd3/prd3";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/prd3" exact component={Test} />
         <Route path="/prd2" exact component={CoursePages} />
         <Route path="/aboutUs" exact component={AboutUs} />
         <Route path="/whychooseus" exact component={WhyChoose} />

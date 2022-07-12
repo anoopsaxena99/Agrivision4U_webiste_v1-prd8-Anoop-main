@@ -1,0 +1,147 @@
+.slider{
+    display: flex;
+    padding: 2%;
+}
+.container{
+    font-family: 'Roboto';
+    font-style: normal;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13);
+    border-radius: 12px;
+    margin-right: 4%;
+    padding: 4%;
+   
+    
+}
+.top{
+   
+    display: flex;
+    align-items: flex-start;
+    width: 90%;
+}
+.heading{
+   
+    color: #0B6E4F;
+    flex: 1.5;
+    font-size: 600;
+    font-size: 110%;
+    margin: 0;
+    margin-top: 4%;
+}
+.amount{
+    text-align: right;
+    flex: 1;
+    align-items: flex-start;
+    color: #696F79;
+    font-size: 500;
+    margin: 0;
+    margin-top: 4%;
+}
+.enroll{
+  
+    font-weight: 500;
+    color: #696F79;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4%;
+}
+.features{
+    
+    display: flex;
+    flex-direction: column;
+   
+}
+.points{
+    display: flex;
+    margin: 0;
+    margin-bottom: 2%;
+}
+.data{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2%;
+}
+.buttonContainer{
+    margin: 0;
+    margin-top: 7%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+}
+.but{
+    background: linear-gradient(90deg, #FC7059 0%, #FD3076 146.12%);
+    box-shadow: 0px 3.16318px 10.2803px rgba(0, 0, 0, 0.25);
+    border-radius: 12.6527px;
+    border-style: none;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center; 
+    color: #FDFDFD;
+    mix-blend-mode: normal;
+    font-weight: 700;
+}
+.imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+}
+.img{
+    border-radius: 12px;
+    width: 100%;
+
+}
+.main{
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    padding-top: 2%; 
+    padding-bottom: 2%;
+    gap: 10%;
+
+}
+.mainHeading{
+    font-weight: 600;
+    color: #5F5F5F;
+    font-size: 250%;
+}
+.left{
+   width: 20%;
+   
+}
+.right{
+    width: 55%;
+}
+@media only screen and (max-width:1000px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto';
+        font-style: normal;
+        padding: 0;
+        padding-top: 2%; 
+        padding-bottom: 2%;
+       
+        gap: 10%;
+    
+    }
+    .left{
+       
+        width: 50%;
+     }
+     .right{
+    
+        width: 90%;
+    }
+    .mainHeading{
+        text-align: center;
+    }
+}
