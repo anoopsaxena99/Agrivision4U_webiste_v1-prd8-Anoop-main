@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Courses from "./pages/Courses/Courses";
+import Courses from "./pages/Courses/Courses1";
 import CourseDashboard from "./components/Course/Course Dashboard/CourseDashboard";
 import Login from "./pages/Login";
 import AboutUs from "./components/global/Footer Writeup/AboutUs";
@@ -29,7 +29,8 @@ import Policies from "./components/global/Footer Writeup/Policies";
 import Article from "./pages/Article";
 import Magazine from "./pages/ArticleDisplay.jsx";
 import Global from "./pages/Global";
-import Testseries from "./pages/Testseries/Testseries";
+// import Testseries from "./pages/Testseries/Testseries";
+import Testseries from "./pages/prd3/prd3";
 import Examnames from "./components/Testseries/TestseriesExam";
 import Subjectnames from "./components/Testseries/TestseriesSubject";
 import TestseriesSpecific from "./pages/Testseries/TestseriesSpecific";
@@ -40,12 +41,16 @@ import TrialPackage from "./pages/Courses/TrialPackage";
 import TrialCourse from "./pages/Courses/TrialCourse";
 import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
+import CoursePages from "./pages/prd2/link";
+import SectionTopic from "./pages/SectionTopicPage";
+
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/prd2" exact component={CoursePages} />
         <Route path="/aboutUs" exact component={AboutUs} />
         <Route path="/whychooseus" exact component={WhyChoose} />
         <Route path="/terms" exact component={TandC} />
@@ -56,7 +61,7 @@ function App() {
         <Route path="/courses/exam=:name" exact component={Coursenames} />
         <Route path="/courses/subject=:name" exact component={Topicnames} />
         <ProtectedRoute path="/course/:id" exact component={Learning} />
-        <ProtectedRoute path="/course/:id1/:id2" exact component={Chapter} />
+        <ProtectedRoute path="/course/:id1/:id2" exact component={SectionTopic} />
         <ProtectedRoute path="/package/:id" exact component={Package} />
         <ProtectedRoute path="/register/:id" exact component={Register} />
 

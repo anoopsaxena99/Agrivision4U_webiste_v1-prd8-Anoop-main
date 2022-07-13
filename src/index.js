@@ -4,7 +4,7 @@ import { GlobalStyle } from "./globalStyle";
 import App from "./App";
 
 
-
+// hello guys its ajit 
 ReactDOM.render(
   <React.StrictMode>
       <GlobalStyle />

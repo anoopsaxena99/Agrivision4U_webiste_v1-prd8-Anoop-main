@@ -4,64 +4,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Styles.css";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import DoneIcon from "@mui/icons-material/Done";
 import CurrentCourses from "../components/prd8/CurrentCourses";
 import styles from "./coursescorrect.module.css";
 import "../components/prd8/App.css";
+import CourseSuggestion from "./CourseSuggestion";
 import DashCourseCard from "../components/Dashboard/DashCourseCard";
 import MyCalendar from "../components/Dashboard/MyCalendar.js";
 const Courses = ({ course }) => {
-  const renderSlides = () =>
-    [1, 2, 3, 4, 5, 6].map((num) => (
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div className={styles.box2}>
-          <div className={styles.left}>
-            <div className={styles.box2mini}></div>
-          </div>
-          <div className={styles.right}>
-            <div className={styles.top}>
-              <p className={styles.heading}>Conquer CFTRI</p>
-              <p className={styles.enrol}>1.3k Students Enrolled</p>
-            </div>
-            <div className={styles.bottom}>
-              <p className={styles.text}>
-                Lorem ipsum dolor sit amet,consecteturad Lorem ipsum dolor sit
-                amet, consectetur ad. Lorem ipsum dolor sit amet,consecteturad
-                Lorem ipsum dolor sit amet, consectetur a
-              </p>
-              <div className={styles.buttonContainer}>
-                <button className={styles.button3}>Enroll now</button>
-                <button className={styles.button4}>Try for free</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.box2}>
-          <div className={styles.left}>
-            <div className={styles.box2mini}></div>
-          </div>
-          <div className={styles.right}>
-            <div className={styles.top}>
-              <p className={styles.heading}>Conquer CFTRI</p>
-              <p className={styles.enrol}>1.3k Students Enrolled</p>
-            </div>
-            <div className={styles.bottom}>
-              <p className={styles.text}>
-                Lorem ipsum dolor sit amet,consecteturad Lorem ipsum dolor sit
-                amet, consectetur ad. Lorem ipsum dolor sit amet,consecteturad
-                Lorem ipsum dolor sit amet, consectetur a
-              </p>
-              <div className={styles.buttonContainer}>
-                <button className={styles.button3}>Enroll now</button>
-                <button className={styles.button4}>Try for free</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ));
   //  styling should always be constant
   // Slider buttons
   const slider = React.createRef();
@@ -130,26 +82,9 @@ const Courses = ({ course }) => {
             })}
           </div>
         </courseCssProperties>
-        <div className="slider-width">
-          <Slider ref={slider} {...settings}>
-            {renderSlides()}
-          </Slider>
-          <button
-            className={styles.button2}
-            style={{ float: "left", marginLeft: "9vw", marginBottom: "4%" }}
-            onClick={() => slider.current.slickPrev()}
-          >
-            Previous
-          </button>
-          <button
-            className={styles.button2}
-            style={{ float: "right", marginRight: "8vw", marginBottom: "5%" }}
-            onClick={() => slider.current.slickNext()}
-          >
-            Next
-          </button>
-        </div>
+        {/* <CourseSuggestion /> */}
       </div>
+      
     </>
   );
 };

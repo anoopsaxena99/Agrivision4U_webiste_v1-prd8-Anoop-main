@@ -62,7 +62,8 @@ const Coursenames = (props) => {
     fun();
     // eslint-disable-next-line
   },[]);
-
+  console.log("items-->courses",items);
+  console.log("packs-->package",packs);
 
     return (
         <>    

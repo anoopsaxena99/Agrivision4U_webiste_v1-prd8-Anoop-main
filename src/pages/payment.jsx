@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useState,useEffect } from "react";
 import Error from "./Error";
 import "react-toastify/dist/ReactToastify.css";
-
+import CoursePages from "../pages/prd2/CoursePage.jsx";
 
 function Payment(props) {
   const notify = (type, message) => {
@@ -75,7 +75,9 @@ function Payment(props) {
       {pId&&<>
        <ToastContainer />
         <Navbar />
-        <HeroSection active={active} packageId={pId} notify={notify} refral={refral} resetRefral={resetRefral} /></>
+        <CoursePages active={active} packageId={pId} notify={notify} refral={refral} resetRefral={resetRefral} />
+        {/* <HeroSection active={active} packageId={pId} notify={notify} refral={refral} resetRefral={resetRefral} /> */}
+        </>
       }
       </>
     );
