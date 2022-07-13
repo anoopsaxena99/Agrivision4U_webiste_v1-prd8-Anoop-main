@@ -24,7 +24,7 @@ function Head(props) {
         </div>
         <div className={styles.footer}>
           <FcClock className={styles.symbol}></FcClock>
-          <h3 className={styles.message}>Available till 23rd March 11:59 pm</h3>
+          <h4 className={styles.message}>Available till 23rd March 11:59 pm</h4>
         </div>
       </div>
       <div className={styles.right}>

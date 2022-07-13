@@ -16,7 +16,7 @@ function Layout({courseId, chapterId}) {
   const [SubItems, setSubItems] = useState(null);
   const [mark, setmark] = useState(null);
   const [subId, setsubId] = useState(null);
-  const [name, setName] = useState(null);
+  const [topicData, setTopicData] = useState(null);
   const [completed, setCompleted] = useState([]);
   const [State, setState] = useState([]);
   const [pagenumber, setPagenumber]= useState(1);
@@ -50,8 +50,8 @@ function Layout({courseId, chapterId}) {
             }
           });
         });
-        setItems(json.data.chapter.topics);    
-        setName(json.data.chapter.name); 
+        setItems(json.data);    
+        // setTopicData(json.data); 
         setRecents(json.data.chapter.topics);
       }
     };
@@ -78,11 +78,12 @@ function Layout({courseId, chapterId}) {
 
  
   const location = useLocation();
-  if(items) {var high = Math.ceil(items.length/9);}
+  if(items) {var high = Math.ceil(items.chapter.topics.length/9);}
   
   useEffect(() => {
 
-    if(items)setState(items.slice((pagenumber - 1) * 9, (pagenumber - 1) * 9 + 9));
+    
+    if(items)setState(items.chapter.topics.slice((pagenumber - 1) * 9, (pagenumber - 1) * 9 + 9));
     
   },[pagenumber,items?1:0]);
 const yes=0;
@@ -105,7 +106,7 @@ const yes=0;
             <p className={styles1.heading}>All Notes</p>
             <div className={styles1.cardsShow}>
                 {State.map((Obj, i) => (
-                  <NotesCard obj={Obj} i={i} pagenumber={pagenumber} handelSub={handelSub} completed={completed}/>
+                  <NotesCard obj={Obj} i={i} pagenumber={pagenumber} handelSub={handelSub} completed={completed} items={items}/>
                 ))}
             </div>
         <div className={styles1.pagination}>

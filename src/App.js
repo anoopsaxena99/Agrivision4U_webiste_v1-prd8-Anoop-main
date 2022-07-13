@@ -43,7 +43,7 @@ import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
 import CoursePages from "./pages/prd2/link";
 import SectionTopic from "./pages/SectionTopicPage";
-
+import SubTopicPage from "./pages/SubTopicPage";
 
 function App() {
   return (
@@ -116,6 +116,7 @@ function App() {
         <Route path="/academics" exact component={Academics} />
         <Route path="/academics/:domain" exact component={TopColleges} />
         <ProtectedRoute path="/articles" component={Article} />
+        <ProtectedRoute path="/topic/:id" component={SubTopicPage} />
         <Route path="/global" component={Global} />
         <ProtectedRoute
           path="/academics/colleges/:id"
