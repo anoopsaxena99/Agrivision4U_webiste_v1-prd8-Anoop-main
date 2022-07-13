@@ -8,75 +8,28 @@ import leftarrow from "./lefticon.png";
 import rightarrow from "./righticon.png";
 import styles from "./FreeAndMegaTestSeries.module.css";
 import { useState, useEffect } from "react";
-import axios from "axios";
-const renderSlides = () =>
-  [1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-    <div className={styles.slider}>
-      <div className={styles.container} key={num}>
-        <div className={styles.imageContainer}>
-          <img src={image1} className={styles.img} />
-        </div>
+import PricedLayout from "./PricedLayout";
+import { Link } from "react-router-dom";
 
-        <div className={styles.top}>
-          <p className={styles.heading}>XE - A : Mega Test Series {num}</p>
-          <p className={styles.amount}>₹ 3,999</p>
-        </div>
-        <div className={styles.enroll}>1.2k students enrolled</div>
-        <div className={styles.feature}>
-          <div className={styles.points}>
-            <img
-              src={tick}
-              style={{ transform: "scale(0.75)", display: "inline" }}
-              alt="tick mark"
-            />{" "}
-            <p className={styles.data}> 4 Full Tests</p>
-          </div>
-          <div className={styles.points}>
-            <img
-              src={tick}
-              style={{ transform: "scale(0.75)", display: "inline" }}
-              alt="tick mark"
-            />{" "}
-            <p className={styles.data}> 0 Sectional Tests</p>
-          </div>
-          <div className={styles.points}>
-            <img
-              src={tick}
-              style={{ transform: "scale(0.75)", display: "inline" }}
-              alt="tick mark"
-            />{" "}
-            <p className={styles.data}>8 Previous Tests</p>
-          </div>
-          <div className={styles.points}>
-            <img
-              src={tick}
-              style={{ transform: "scale(0.75)", display: "inline" }}
-              alt="tick mark"
-            />{" "}
-            <p className={styles.data}>8 Mockups</p>
-          </div>
-        </div>
-        <div className={styles.buttonContainer}>
-          <button className={styles.but}>View Test</button>
-        </div>
-      </div>
-    </div>
-  ));
 const FreeAndMegaTestSeries = (props) => {
-  console.log(props.arr2[0], "props wale array");
+  
   return (
     <div className={styles.main}>
-      {props.arr2.length &&
-        props.arr2.map((Obj, i) => (
+      {props.free.length &&
+        props.free.map((f, i) => {
+          let url = "/testseries/" + f._id;
+
+          return(
           <div className={styles.left}>
-            <p className={styles.mainHeading}>{Obj.name}</p>
+            <ViewLink key ={f._id} to={{pathname: url, state: { testSeriesId: f._id, name: f.name }}}>
+            <p className={styles.mainHeading}>Free Test</p>
             <div className={styles.container}>
               <div className={styles.imageContainer}>
-                <img src={image1} className={styles.img} />
+                <img src={f.bigImage? f.bigImage: image1} className={styles.img} />
               </div>
               <div className={styles.top}>
-                <p className={styles.heading}>XE - A : Mega Test Series </p>
-                <p className={styles.amount}>₹ 3,999</p>
+                <p className={styles.heading}>{f.name}</p>
+                <p className={styles.amount}>₹ {f.price}</p>
               </div>
               <div className={styles.enroll}>1.2k students enrolled</div>
               <div className={styles.feature}>
@@ -86,7 +39,7 @@ const FreeAndMegaTestSeries = (props) => {
                     style={{ transform: "scale(0.75)" }}
                     alt="tick mark"
                   />{" "}
-                  4 Full Tests
+                  {f.fullLengthTestCount} Full Tests
                 </div>
                 <div className={styles.points}>
                   <img
@@ -94,7 +47,7 @@ const FreeAndMegaTestSeries = (props) => {
                     style={{ transform: "scale(0.75)" }}
                     alt="tick mark"
                   />{" "}
-                  0 Sectional Tests
+                  {f.sectionalTestCount} Sectional Tests
                 </div>
                 <div className={styles.points}>
                   <img
@@ -102,7 +55,7 @@ const FreeAndMegaTestSeries = (props) => {
                     style={{ transform: "scale(0.75)" }}
                     alt="tick mark"
                   />{" "}
-                  8 Previous Tests
+                  {f.previousTestCount} Previous Tests
                 </div>
                 <div className={styles.points}>
                   <img
@@ -110,15 +63,16 @@ const FreeAndMegaTestSeries = (props) => {
                     style={{ transform: "scale(0.75)" }}
                     alt="tick mark"
                   />{" "}
-                  8 Mockups
+                  {f.modelTestCount} Mockups
                 </div>
               </div>
               <div className={styles.buttonContainer}>
                 <button className={styles.but}>View Test</button>
               </div>
             </div>
+            </ViewLink>
           </div>
-        ))}
+)})}
       <div className={styles.right}>
         <p className={styles.mainHeading}>Mega Test Series</p>
         <Slider
@@ -126,15 +80,29 @@ const FreeAndMegaTestSeries = (props) => {
           slidesToShow={3}
           slidesToScroll={2}
           autoplay={false}
-          infinite={true}
+          infinite={false}
           prevArrow={<img src={leftarrow} alt="left arrow" />}
           nextArrow={<img src={rightarrow} alt="right arrow" />}
         >
-          {renderSlides()}
+          {props.priced.length &&
+            props.priced.map((p, i) => {
+              let url = "/testseries/" + p._id;
+              return (
+                <ViewLink key ={p._id} to={{pathname: url, state: { testSeriesId: p._id, name: p.name }}}>
+              <PricedLayout p={p} i={i}/>
+              </ViewLink>
+              )
+            })}
         </Slider>
       </div>
     </div>
   );
 };
+const ViewLink = styled(Link)`
+text-decoration: none;
+color: black;
+font-style: normal;
+font-weight: normal;
+`;
 
 export default FreeAndMegaTestSeries;
