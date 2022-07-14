@@ -29,7 +29,8 @@ import Policies from "./components/global/Footer Writeup/Policies";
 import Article from "./pages/Article";
 import Magazine from "./pages/ArticleDisplay.jsx";
 import Global from "./pages/Global";
-import Testseries from "./pages/Testseries/Testseries";
+// import Testseries from "./pages/Testseries/Testseries";
+import Testseries from "./pages/prd3/prd3";
 import Examnames from "./components/Testseries/TestseriesExam";
 import Subjectnames from "./components/Testseries/TestseriesSubject";
 import TestseriesSpecific from "./pages/Testseries/TestseriesSpecific";
@@ -42,6 +43,7 @@ import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
 import CoursePages from "./pages/prd6/prd6Main";
 import SectionTopic from "./pages/SectionTopicPage";
+import SubTopicPage from "./pages/SubTopicPage";
 
 function App() {
   return (
@@ -123,6 +125,7 @@ function App() {
         <Route path="/academics" exact component={Academics} />
         <Route path="/academics/:domain" exact component={TopColleges} />
         <ProtectedRoute path="/articles" component={Article} />
+        <ProtectedRoute path="/topic/:id" component={SubTopicPage} />
         <Route path="/global" component={Global} />
         <ProtectedRoute
           path="/academics/colleges/:id"
