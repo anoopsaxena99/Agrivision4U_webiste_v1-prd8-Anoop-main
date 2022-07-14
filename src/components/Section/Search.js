@@ -49,7 +49,7 @@ function Search({items,recents, yes, searchHandler}) {
           <p className={styles.secondHeading}> {yes ? ("Recent Lectures"): ("Recent Notes")} </p>
           {/* <p className={styles.load}>view more </p> */}
         </div>
-        <div className={styles.third}>
+        <div className={styles.third}> 
         {
           recents ? (
             
@@ -58,7 +58,7 @@ function Search({items,recents, yes, searchHandler}) {
           <div className={styles.cards} onClick={()=> {console.log(items,idx)}}>
             <img src={subject} alt="topic" className={styles.img} />
             <div className={styles.lower}>
-            <ViewLink key ={i} to={{pathname: `/topic/${recents[i]._id}`, state: { topicsData:items }}}>
+            <ViewLink key ={i} to={{pathname: `/topic/${recents[i]._id}`, state: { topicsData:items , topicIndex:{i} }}}>
               <div className={styles.about}>
                 <p className={styles.number}>{idx+1}.</p>
                 <p className={styles.text}>{recents[i].name}</p>

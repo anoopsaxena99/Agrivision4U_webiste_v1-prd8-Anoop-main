@@ -8,7 +8,9 @@ import Loader from "../../../pages/Loader";
 import { baseURL } from "../../../Apis";
 import NotesCard from "./TopicCard";
 import Search from "../Search";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Zoom,Slide } from 'react-toastify';
 
 function Layout({courseId, chapterId}) {
   const [active, setActive] = useState(1);
@@ -23,7 +25,16 @@ function Layout({courseId, chapterId}) {
   const [recents,setRecents]=useState(null);
 
   const searchHandler = (filtered)=>{
-    if(!filtered.length) return alert("No Matching");;
+    if(!filtered.length) return toast('No Matching Notes', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      transition: Zoom,
+      });
       setState(filtered);
       setItems(filtered);
   }
@@ -78,18 +89,19 @@ function Layout({courseId, chapterId}) {
 
  
   const location = useLocation();
-  if(items) {var high = Math.ceil(items.chapter.topics.length/9);}
+  if(recents) {var high = Math.ceil(recents.length/9);}
   
   useEffect(() => {
 
     
-    if(items)setState(items.chapter.topics.slice((pagenumber - 1) * 9, (pagenumber - 1) * 9 + 9));
+    if(recents)setState(recents.slice((pagenumber - 1) * 9, (pagenumber - 1) * 9 + 9));
     
-  },[pagenumber,items?1:0]);
+  },[pagenumber,recents?1:0]);
 const yes=0;
   return (
     
     <>
+   
 
     {(items && recents) ? (
       <> 
@@ -141,7 +153,7 @@ const yes=0;
     ) : (
       <Loader />
     )}
-    
+     <ToastContainer/>
    </>
   );
 

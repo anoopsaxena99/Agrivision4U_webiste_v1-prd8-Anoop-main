@@ -16,7 +16,7 @@ const NotesCard = ({obj,i,pagenumber,handelSub,completed,items})=> {
           <img src={subject} alt="topic" className={styles.img} />
           
           <div className={styles.lower}>
-          <ViewLink key ={i} to={{pathname: `/topic/${obj._id}`, state: { topicsData:items }}}>
+          <ViewLink key ={i} to={{pathname: `/topic/${obj._id}`, state: { topicsData:items , topicIndex:{i}}}}>
             <div className={styles.about}>
               <p className={styles.number}>
                 {i + 1 + (pagenumber - 1) * 9}.
