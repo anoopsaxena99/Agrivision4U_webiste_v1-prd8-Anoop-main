@@ -75,6 +75,7 @@ export default function Appk({ pack }) {
           })}
           <ImageSlider2 pack={pack} value={activeTab} />
         </TabPanelContainer>
+        
       </div>
     </div>
   );

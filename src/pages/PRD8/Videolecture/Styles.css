@@ -1,0 +1,29 @@
+.slider-width{
+    width:80%;
+    
+}
+
+.custom-dots {
+    width:30px;
+    color: #5F5F5F;
+}
+
+@media screen and (max-width: 900px) {
+    .slider-width{
+        width:85%;
+    }
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .icon {
+        font-size: small !important;
+    }
+
+    .custom-dots {
+        width:10px;
+    }
+    
+}

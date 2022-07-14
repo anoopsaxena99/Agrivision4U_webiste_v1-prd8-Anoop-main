@@ -59,7 +59,8 @@ const Subjectnames = (props) => {
     fun();
     // eslint-disable-next-line
   }, []);
-
+  console.log("item : - ",items);
+  console.log("packs : - ",packs);
   return (
     <>
       <Navbar />
