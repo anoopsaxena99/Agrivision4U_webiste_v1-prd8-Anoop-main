@@ -108,7 +108,7 @@ const yes=1;
             <p className={styles1.heading}>All Recorded Lectures</p>
             <div className={styles1.cardsShow}>
                 {State.map((Obj, i) => (
-                  <LecturesCard obj={Obj} i={i} pagenumber={pagenumber} handelSub={handelSub} completed={completed}/>
+                  <LecturesCard courseId={courseId} chapterId={chapterId} obj={Obj} i={i} pagenumber={pagenumber} handelSub={handelSub} completed={completed}/>
                 ))}
             </div>
         <div className={styles1.pagination}>

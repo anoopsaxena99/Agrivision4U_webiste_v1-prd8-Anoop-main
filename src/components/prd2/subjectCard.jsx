@@ -9,18 +9,18 @@ import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 function SubjectCard({ onesub }) {
-  // console.log("kh",onesub);
+  console.log("kh", onesub);
 
   return (
     <>
       <ViewLink to={{ pathname: `/courses/subject=${onesub}` }}>
-        <div >
+        <div>
           <div className={styles.SliderContainer}>
             <div className={styles.cardContainer}>
               <img className={styles.img} src={Book} alt="" />
 
               <div className={styles.cardHeading}>
-                <p>{onesub}</p>
+                <p>{onesub.name}</p>
               </div>
               <div className={styles.cardEnrolled}>
                 <p>1.2k students</p>

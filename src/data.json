@@ -1,0 +1,113 @@
+{
+    "message": "course fetched",
+    "data": {
+      "course": [
+        {
+          "_id": "62a195d0dee7cdcce903229c",
+          "name": "Physics Mega "
+        } 
+      ],
+      "chapter": {
+        "topics": [
+          {
+            "subTopics": [
+              {
+                "_id": "617681f9179ac0981feeae0c",
+                "name": "FARADAY'S LAW",
+                "isCompleted": false
+              }
+            ],
+            "_id": "61768238179ac0981feeae26",
+            "name": "FARADAY'S LAW",
+            "__v": 0,
+            "isFreeTrial": false
+          },
+          {
+            "subTopics": [
+              {
+                "_id": "61768215179ac0981feeae12",
+                "name": "LENZ'S LAW (CONSERVATION OF ENERGY PRINCIPLE)",
+                "isCompleted": false
+              }
+            ],
+            "_id": "61768242179ac0981feeae32",
+            "name": "LENZ'S LAW (CONSERVATION OF ENERGY PRINCIPLE)",
+            "__v": 0,
+            "isFreeTrial": false
+          },
+          {
+            "subTopics": [
+              {
+                "_id": "61768228179ac0981feeae18",
+                "name": "MOTIONAL EMF",
+                "isCompleted": false
+              }
+            ],
+            "_id": "6176824d179ac0981feeae3d",
+            "name": "MOTIONAL EMF",
+            "__v": 0,
+            "isFreeTrial": false
+          },
+          {
+            "subTopics": [
+              {
+                "_id": "62bd791bac4ec422f36f15da",
+                "name": "1- Introduction to Electromagnetic Induction ",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd793dac4ec422f36f15e1",
+                "name": "2- Magnetic Flux",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd7960ac4ec422f36f15e8",
+                "name": "3- Law of Electromagnetic Induction",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd797eac4ec422f36f15ef",
+                "name": "4- Motional Emf",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd7996ac4ec422f36f15f6",
+                "name": "5- Inductance",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd79adac4ec422f36f15fd",
+                "name": "6- Mutual Inductance",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd79daac4ec422f36f1604",
+                "name": "7- Combination of inductors series and parallel",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd79f2ac4ec422f36f160b",
+                "name": "8- Self Inductance",
+                "isCompleted": false
+              },
+              {
+                "_id": "62bd7a09ac4ec422f36f1612",
+                "name": "9- Transformer",
+                "isCompleted": false
+              }
+            ],
+            "_id": "62bd7aa3ac4ec422f36f16ae",
+            "name": "Electromagnetic induction video lectures",
+            "__v": 0,
+            "isFreeTrial": false
+          }
+        ],
+        "freeTrialTopics": [],
+        "_id": "62b40043037b409da826c1ea",
+        "name": "Electromagnetic Induction",
+        "totalSubTopics": 12,
+        "__v": 0
+      }
+    },
+    "success": true
+  }

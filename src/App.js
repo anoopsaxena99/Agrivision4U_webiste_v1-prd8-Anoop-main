@@ -13,7 +13,7 @@ import Privacy from "./components/global/Footer Writeup/Privacy";
 import Quiz from "./pages/Quiz";
 import Payment from "./pages/payment";
 import OrderCheckpoint from "./pages/OrderCheckpoint";
-import Dashboard from "./pages/Dashboard2";
+import Dashboard from "./pages/Dashboard";
 import JobUpdate from "./pages/JobUpdate";
 import Topicnames from "./components/Course/Subject Specific/Topicnames";
 import Reset from "./pages/Reset";
@@ -40,7 +40,7 @@ import TrialPackage from "./pages/Courses/TrialPackage";
 import TrialCourse from "./pages/Courses/TrialCourse";
 import TrialChapter from "./pages/Courses/TrialChapter";
 import ExamSpecificPapers from "./components/Testseries/ExamSpecificPapers";
-import CoursePages from "./pages/prd2/link";
+import CoursePages from "./pages/prd6/prd6Main";
 import SectionTopic from "./pages/SectionTopicPage";
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/prd2" exact component={CoursePages} />
+
         <Route path="/aboutUs" exact component={AboutUs} />
         <Route path="/whychooseus" exact component={WhyChoose} />
         <Route path="/terms" exact component={TandC} />
@@ -59,7 +59,16 @@ function App() {
         <Route path="/courses/exam=:name" exact component={Coursenames} />
         <Route path="/courses/subject=:name" exact component={Topicnames} />
         <ProtectedRoute path="/course/:id" exact component={Learning} />
-        <ProtectedRoute path="/course/:id1/:id2" exact component={SectionTopic} />
+        <ProtectedRoute
+          path="/course/:id1/:id2"
+          exact
+          component={SectionTopic}
+        />
+        <ProtectedRoute
+          path="/course/:id1/:id2/:id3"
+          exact
+          component={CoursePages}
+        />
         <ProtectedRoute path="/package/:id" exact component={Package} />
         <ProtectedRoute path="/register/:id" exact component={Register} />
 

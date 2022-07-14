@@ -5,12 +5,14 @@ import styles from "./lectures.module.css";
 import { useLocation, Link } from "react-router-dom";
 import { baseURL } from "../../../Apis";
 import Search from "../Search";
-const NotesCard = ({obj,i,pagenumber,handelSub,completed})=> {
-
+import styled from "styled-components";
+const NotesCard = ({chapterId,courseId,obj,i,pagenumber,handelSub,completed})=> {
+  console.log("neeww",chapterId,courseId,obj,i,pagenumber);
   return (
     <>
         
-        <div className={styles.cards}  onClick={()=> {console.log(obj.subTopics)}} >
+        <div className={styles.cards}  >
+          <ViewLink to={{ pathname: `/course/${courseId}/${chapterId}/${obj._id}` }}>
           <img src={subject} alt="topic" className={styles.img} />
           <div className={styles.lower}>
             <div className={styles.about}>
@@ -36,11 +38,14 @@ const NotesCard = ({obj,i,pagenumber,handelSub,completed})=> {
             </svg>
           </div>
           <p className={styles.time}>30mintutes</p>
+        </ViewLink>
         </div>
+        
         </>
       
       );
         
   }
-
+  const ViewLink = styled(Link)`
+`;
 export default NotesCard;
