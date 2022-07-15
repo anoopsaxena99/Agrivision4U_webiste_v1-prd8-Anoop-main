@@ -118,13 +118,7 @@ function Layout({ courseId, chapterId }) {
                 <div className={styles1.cardsShow}>
                   {State.map((Obj, i) => (
                     <LecturesCard
-                      courseId={courseId}
-                      chapterId={chapterId}
-                      obj={Obj}
-                      i={i}
-                      pagenumber={pagenumber}
-                      handelSub={handelSub}
-                      completed={completed}
+                    obj={Obj} i={i} pagenumber={pagenumber} handelSub={handelSub} completed={completed} items={items}
                     />
                   ))}
                 </div>
