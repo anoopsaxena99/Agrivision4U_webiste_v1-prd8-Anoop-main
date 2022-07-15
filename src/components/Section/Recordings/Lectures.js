@@ -125,6 +125,7 @@ function Layout({ courseId, chapterId }) {
                       pagenumber={pagenumber}
                       handelSub={handelSub}
                       completed={completed}
+                      items={items}
                     />
                   ))}
                 </div>

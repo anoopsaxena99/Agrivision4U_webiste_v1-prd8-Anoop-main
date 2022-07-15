@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Sidebar from "../components/prd6/Sidebar";
 import TopicMaterial from "../components/prd6/TopicMaterial";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TopBreadCrumbs from "../components/prd6/TopBreadCrumbs";
 import "../App.css";
+import Navbar from "../components/global/Navbar";
+import Footer from "../components/global/Footer";
 function MainPrd6(props) {
   // console.log(props.topicInfo);
-   const [content, setContent] = useState("");
+  const [content, setContent] = useState("");
   const [contentType, setContentType] = useState(-1);
   const [currentOpenTopicId, setCurrentOpenTopicId] = useState(-1);
-  const [ctype,setctype]=useState(2);
+  const [ctype, setctype] = useState(2);
   const handleSetctype = (data) => {
     setctype(data);
   };
@@ -22,11 +24,12 @@ function MainPrd6(props) {
     setContentType(data);
   };
 
-  const handleSetCurrentOpenTopicId=(data)=>{
-    setCurrentOpenTopicId(data)
-  }
+  const handleSetCurrentOpenTopicId = (data) => {
+    setCurrentOpenTopicId(data);
+  };
   return (
     <div>
+      <Navbar></Navbar>
       <Box
         sx={{
           flexGrow: 1,
@@ -52,17 +55,23 @@ function MainPrd6(props) {
             />
           </Grid>
           <Grid item xs={9} sx={{ height: "100%", overflow: "scroll" }}>
-            <div style={{ position: "fixed", width: "100%" }}>
-              <TopBreadCrumbs props={props}/>
+            <div style={{ width: "100%" }}>
+              <TopBreadCrumbs props={props} />
             </div>
             <div style={{ paddingTop: "40px" }}>
-              <TopicMaterial contentType={contentType} content={content} topicId={currentOpenTopicId} ctype={ctype}/>
+              <TopicMaterial
+                contentType={contentType}
+                content={content}
+                topicId={currentOpenTopicId}
+                ctype={ctype}
+              />
             </div>
           </Grid>
         </Grid>
       </Box>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default MainPrd6
+export default MainPrd6;
