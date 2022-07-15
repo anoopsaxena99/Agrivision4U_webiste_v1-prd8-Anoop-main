@@ -12,13 +12,14 @@
 .left{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     width: 40%;
 }
 .message{
-    font-weight: 600;
+    font-weight: 500;
     font-family: 'Roboto';
 font-style: normal;
+margin-left: 2%;
    
 }
 .questionpaper{
@@ -34,24 +35,32 @@ font-style: normal;
    
 }
 .symbol{
-    transform: translateY(130%);
+    transform: translateY(47%);
+    
+
+background: #0B6E4F;
 }
 .heading{
     color: #308168;
     padding-bottom: value;
     border-bottom-style: solid;
-    width: 70%;
+    width: 65%;
     font-family: 'Roboto';
     font-style: normal;
-}
+    border-bottom: 1px solid #0B6E4F;
+    padding-bottom:2px;
+    
+
+    }
 .text{
     /* transform: translateY(-150%); */
     color:  #696F79;
     font-family: 'Roboto';
     font-style: normal;
     margin: 0;
-    margin-top: 2%;
-   font-size: 80%;
+    margin-top: 4%;
+    margin-bottom: 25%;
+   font-size: 110%;
     
 }
 .right{
@@ -62,9 +71,10 @@ font-style: normal;
 }
 .number{
     font-family: 'Roboto';
-    font-size: 80%;
+    font-size: 120%;
     margin: 0;
-font-style: normal;
+    margin-top: 40px;
+    font-style: normal;
 }
 .button1{ 
    

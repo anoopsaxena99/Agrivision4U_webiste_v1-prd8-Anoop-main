@@ -12,12 +12,9 @@ function Prd3() {
   const [activeTab, setActiveTab] = useState(0);
   const handleChange = (e, value) => {
     setActiveTab(value);
-    console.log(value);
   };
   const [repo, setRepo] = useState([]);
   const [Exam, setExam] = useState([]);
-
-
 
   useEffect(() => {
     const fun = async (e) => {
@@ -67,9 +64,9 @@ for (var i = 0; i < Exam.length; i++) {
 
     if(priced.length) priced = priced;
 
-    if (free.length > 1) {
-      free = free.slice(0, 1);
-    }
+    // if (free.length > 1) {
+    //   free = free.slice(0, 2);
+    // }
 
   return (
     <>

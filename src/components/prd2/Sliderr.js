@@ -7,7 +7,10 @@ import { FaStar } from "react-icons/fa";
 import Book from "./imageofbook.jpg";
 import styles from "./sliderr.module.css";
 import SubjectCard from "./subjectCard";
-function ImageSlider({ subjects }) {
+import { useState, useEffect } from "react";
+import { baseURL } from "../../Apis";
+
+function ImageSlider({ subject }) {
   let settings = {
     dots: false,
     infinite: false,
@@ -16,13 +19,48 @@ function ImageSlider({ subjects }) {
     slidesToScroll: 2,
     initialSlide: 0,
   };
-  
+  console.log(subject);
+
+  const [packs, setpacks] = useState([]);
+  let name = subject;
+  useEffect(() => {
+    const fun = async (e) => {
+      const response = await fetch(`${baseURL}/package?subject=${name}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const json = await response.json();
+      if (json.success) {
+        setpacks(json.data);
+      }
+    };
+    fun();
+    // eslint-disable-next-line
+  }, [name]);
+
+  if (packs != null) console.log("packs :- ", packs);
+
   return (
-    <Slider {...settings}>
-      {subjects.map((s)=>{
-         return <SubjectCard onesub={s}/>
-      })}
-    </Slider>
+    <>
+      {packs == 0 ? (
+        <img
+          src="/images/coming-soon.svg"
+          alt="coming-soon"
+          style={{ height: "600px", "margin-left": "250px" }}
+        ></img>
+      ) : (
+        <>
+          <Slider {...settings}>
+            {packs[0].packages.map((s) => {
+              return <SubjectCard onesub={s} />;
+            })}
+          </Slider>
+        </>
+      )}
+    </>
   );
 }
 

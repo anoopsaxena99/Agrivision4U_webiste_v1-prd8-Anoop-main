@@ -15,19 +15,31 @@ const FreeAndMegaTestSeries = (props) => {
   
   return (
     <div className={styles.main}>
-      {props.free.length &&
+      
+          <div className={styles.left}>
+           
+            <p className={styles.mainHeading}>Free Test</p>
+            <Slider
+          arrows={true}
+          slidesToShow={1}
+          slidesToScroll={1}
+          autoplay={false}
+          infinite={true}
+          prevArrow={<img src={leftarrow} alt="left arrow" />}
+          nextArrow={<img src={rightarrow} alt="right arrow" />}
+        >
+            {props.free.length &&
         props.free.map((f, i) => {
           let url = "/testseries/" + f._id;
 
           return(
-          <div className={styles.left}>
             <ViewLink key ={f._id} to={{pathname: url, state: { testSeriesId: f._id, name: f.name }}}>
-            <p className={styles.mainHeading}>Free Test</p>
             <div className={styles.container}>
               <div className={styles.imageContainer}>
                 <img src={f.bigImage? f.bigImage: image1} className={styles.img} />
               </div>
               <div className={styles.top}>
+                {console.log(f.name)}
                 <p className={styles.heading}>{f.name}</p>
                 <p className={styles.amount}>₹ {f.price}</p>
               </div>
@@ -70,9 +82,11 @@ const FreeAndMegaTestSeries = (props) => {
                 <button className={styles.but}>View Test</button>
               </div>
             </div>
-            </ViewLink>
+            </ViewLink>)})}
+            </Slider>
+            
           </div>
-)})}
+
       <div className={styles.right}>
         <p className={styles.mainHeading}>Mega Test Series</p>
         <Slider
