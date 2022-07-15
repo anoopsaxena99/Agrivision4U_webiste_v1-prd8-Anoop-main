@@ -9,7 +9,7 @@ import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 function SubjectCard({ onesub }) {
-  console.log("kh", onesub);
+  // console.log("kh", onesub);
 
   return (
     <>
@@ -20,7 +20,7 @@ function SubjectCard({ onesub }) {
               <img className={styles.img} src={Book} alt="" />
 
               <div className={styles.cardHeading}>
-                <p>{onesub.name}</p>
+                <p>{onesub}</p>
               </div>
               <div className={styles.cardEnrolled}>
                 <p>1.2k students</p>
@@ -42,7 +42,7 @@ function SubjectCard({ onesub }) {
                 <span className={styles.cardStar}>
                   <FaStar></FaStar>
                 </span>
-                <span className={styles.cardDetails}>(218248)</span>
+                <span className={styles.cardDetails}>(21K)</span>
               </div>
             </div>
           </div>
