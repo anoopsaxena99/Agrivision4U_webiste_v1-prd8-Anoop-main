@@ -33,7 +33,7 @@ const TopBreadCrumbs = ({props}) => {
         display: "flex",
       }}
     >
-      <Breadcrumbs aria-label="breadcrumb" separator="›" >
+      <Breadcrumbs aria-label="breadcrumb" separator="›"  >
         <a style={mystyle} href="/dashboard">
           Dashboard
         </a>
@@ -53,9 +53,11 @@ const TopBreadCrumbs = ({props}) => {
 const mystyle = {
   color: "#39ac73	",
   backgroundColor: "#F7F7F7",
-  padding: "10px",
-  fontFamily: "Arial",
-  borderRadius:"10px"
+  padding: "9px",
+  fontFamily: "Roboto",
+  borderRadius:"10px",
+  fontWeight: "400",
+
 };
 
 export default TopBreadCrumbs;

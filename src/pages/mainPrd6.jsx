@@ -29,7 +29,7 @@ function MainPrd6(props) {
   };
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Box
         sx={{
           flexGrow: 1,
@@ -69,7 +69,7 @@ function MainPrd6(props) {
           </Grid>
         </Grid>
       </Box>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

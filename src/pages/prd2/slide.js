@@ -15,20 +15,10 @@ function Aplp({ subjects }) {
     setActiveTab(value);
   };
 
-  // console.log(subjects);
+  console.log("subjects :>> ", subjects);
   return (
     <div>
-      <TabsContainer>
-        <Tabs selectedTab={activeTab} onChange={handleChange}>
-          {subjects.map((s,i)=>{
-            return <Tab label={s} value={i}></Tab>
-          })}
-        </Tabs>
-      </TabsContainer>
-      <TabPanel value={activeTab} selectedIndex={activeTab}>
-        <ImageSlider subject={subjects[activeTab]} />
-      </TabPanel>
-      
+      <ImageSlider subject={subjects} />
     </div>
   );
 }

@@ -29,13 +29,18 @@ const TopicMaterial = ({ contentType, content ,ctype }) => {
       </div>
       
       
-      <Stack direction="row" spacing={2} sx={{ position: 'absolute', bottom: '20px', bgcolor:'white', zIndex: 10}}>
+      <Stack direction="row" spacing={2} sx={{  marginLeft:'30%', bgcolor:'white', zIndex: 10}}>
+        {contentType!=-1? (
+          <>
         <Button variant="contained" color="success">
           Marked as complete
         </Button>
         <Button variant="outlined" color="success">
-          Join the Discussion
-        </Button>
+        Join the Discussion
+      </Button>
+      </>
+      ):(<></>)}
+        
       </Stack>
     </div>
   );

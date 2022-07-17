@@ -7,6 +7,7 @@ import { useLocation, Link } from "react-router-dom";
 import { baseURL } from "../../../Apis";
 import Search from "../Search";
 const NotesCard = ({obj,i,pagenumber,handelSub,completed,items})=> {
+  // console.log("dfejvejf",items);
   return (
     <>
         
