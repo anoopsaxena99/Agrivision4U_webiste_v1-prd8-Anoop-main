@@ -15,7 +15,7 @@ const TopicMaterial = ({ contentType, content ,ctype }) => {
         {contentType == -1 ? <img style={{ height: "82vh", width: "60vw" ,'margin-left':'100px' ,'padding':'2%' }} src="/images/ChapterPageLogo.svg" alt="Select any subtopic to start learning"/> : null}
         {contentType === 1 ? (
           (ctype == 1)?(
-          <video width="1080" height="570" controls>
+          <video width="1080" height="570" controls controlsList="nodownload">
             <source src={content} type="video/mp4" />
           </video>):(<img src={NoVideo} alt="No Video Available" style={{height: '82vh', width: '60vw','margin-left':'130px' ,'padding':'3%'}}/>)
         ) :(contentType === 0 ? (

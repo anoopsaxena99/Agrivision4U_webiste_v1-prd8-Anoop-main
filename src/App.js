@@ -49,6 +49,7 @@ function App() {
   return (
     <Router>
       <Switch>
+        
         <Route path="/" exact component={Home} />
 
         <Route path="/aboutUs" exact component={AboutUs} />
@@ -94,7 +95,7 @@ function App() {
           exact
           component={TrialTestseriesSpecific}
         />
-
+  
         <Route path="/login" exact component={Login} />
         <Route path="/reset" exact component={Reset} />
         <Route path="/testseries" exact component={Testseries} />
