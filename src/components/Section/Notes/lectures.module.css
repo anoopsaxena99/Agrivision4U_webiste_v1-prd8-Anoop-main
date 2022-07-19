@@ -8,10 +8,13 @@
 .heading{
     font-weight: 700;
     font-size: 150%;
+    margin-left: 2%;
 }
 .cardsShow{
+    margin-left: 2%;
     display: flex;
     flex-wrap: wrap;
+    width: 67%;
 }
 .cards{
     display: flex;
@@ -37,8 +40,20 @@
 }
 .img{
     height: 200px;
+    width: 100%;
     
 }
+/*
+@media (max-width:1000px){
+    .cardsShow{
+        margin-left: 2%;
+        height: 450px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+    }
+}
+*/
 .lower{
     display: flex;
     justify-content: space-between;
@@ -74,9 +89,9 @@
     color: #0B6E4F;
     text-decoration: none;
     background: #F7F7F7;
-border-radius: 12px;
-border: none;
-margin-right: 2px;
+    border-radius: 12px;
+    border: none;
+    margin-right: 2px;
 }
 @media screen and (max-width: 1200px) {
    
@@ -109,3 +124,4 @@ margin-right: 2px;
        
     }
 }
+
