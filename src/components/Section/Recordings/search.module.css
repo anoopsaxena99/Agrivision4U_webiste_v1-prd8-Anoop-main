@@ -1,31 +1,46 @@
-.container{
-    
+.container {
+
     display: flex;
     flex-direction: column;
     font-family: 'Roboto';
     font-style: normal;
     padding: 0;
 }
-.first{
+
+.first {
     display: flex;
     gap: 5%;
-   align-items: center;
-   
+    margin-top: -35%;
+    align-items: center;
+
 }
-.box{
+@media screen and (max-width: 1200px) {
+   
+    .first {
+        display: flex;
+        gap: 5%;
+        height: 15vw;
+        margin-top: 0%;
+        align-items: center;
+    
+    }
+}
+.box {
     display: flex;
-  
     gap: 10px;
 }
-.img{
+
+.img {
     width: 100%;
 }
-.firstHeading{
+
+.firstHeading {
     font-weight: 700;
     font-size: 180%;
     color: #0B6E4F;
 }
-.input{
+
+.input {
     width: 300px;
     height: 40px;
     background: #EFEFEF;
@@ -33,57 +48,68 @@
     border: none;
     padding: 3%;
 }
-.search{
+
+.search {
     width: 100px;
     height: 40px;
     background: #13AE7E;
-border-radius: 12px;
-border: none;
-color: #FFFFFF;
-font-weight: 400;
+    border-radius: 12px;
+    border: none;
+    margin-top: 3%;
+    color: #FFFFFF;
+    font-weight: 400;
 }
-.second{
+
+.second {
 
     display: flex;
     justify-content: space-between;
 }
-.secondHeading{
+
+.secondHeading {
     font-weight: 600;
     color: #0B6E4F;
     font-size: 130%;
 }
-.load{
+
+.load {
     text-decoration-line: underline;
     color: #0B6E4F;
     font-weight: 400;
 }
-.third{
+
+.third {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0;
 }
-.cards{
+
+.cards {
     display: flex;
     flex-direction: column;
     width: 45%;
     background: #FFFFFF;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13);
     border-radius: 12px;
-   
+
 }
-.img{
+
+.img {
     height: 200px;
 }
-.lower{
+
+.lower {
     display: flex;
     justify-content: space-between;
 }
-.cardsShow{
+
+.cardsShow {
     display: flex;
     flex-wrap: wrap;
 }
-.cards{
+
+.cards {
     display: flex;
     flex-direction: column;
     opacity: 1;
@@ -98,36 +124,48 @@ font-weight: 400;
     background: #FFFFFF;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13);
     border-radius: 12px;
-   
+
 }
-.about{
+
+.about {
     display: flex;
     font-weight: 600;
 }
-.lower{
+
+.lower {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.text{
+
+.text {
     display: flex;
     font-size: 120%;
     margin-left: 2%;
     align-items: center;
     margin: 0;
 }
-.number{
+
+.number {
     font-size: 120%;
     margin: 0;
 }
-.time{
+
+.time {
     margin: 0;
     font-weight: 400;
     color: #AAACAF;
     margin-left: 5%;
 }
-.heading{
+
+.heading {
     color: #0B6E4F;
     font-size: 150%;
 
+}
+@media screen and (max-width: 600px) {
+    .img{
+     height: 150px;
+    }
+   
 }
