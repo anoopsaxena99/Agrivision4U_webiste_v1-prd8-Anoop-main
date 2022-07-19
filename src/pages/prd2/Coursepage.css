@@ -36,6 +36,7 @@
   line-height: 70px;
   padding-top: 5% !important;
 }
+
 .heading7 {
   font-family: "Roboto";
   font-style: normal;
@@ -46,7 +47,41 @@
   margin-top: -60%;
   padding-top: 0% !important;
 }
-
+@media(max-width: 1450px){
+  .heading7{
+    margin-top: -65%;
+  }
+}
+@media(max-width: 1350px){
+  .heading7{
+    margin-top: -75%;
+  }
+}
+@media(max-width: 1250px){
+  .heading7{
+    margin-top: -80%;
+  }
+}
+@media(max-width: 1150px){
+  .heading7{
+    margin-top: -90%;
+  }
+}
+@media(max-width: 950px){
+  .heading7{
+    margin-top: -100%;
+  }
+}
+@media(max-width: 750px){
+  .heading7{
+    margin-top: -75%;
+  }
+}
+@media(max-width: 600px){
+  .heading7{
+    margin-top: -95%;
+  }
+}
 .heading1 {
   color: #0b6e4f;
 }
@@ -237,25 +272,23 @@
 }
 .sli{
   width: 45vw;
-  margin-top: -37%;
+  margin-top: -43%;
   margin-left: 35%;
-  height: 16vw;
 }
 .sli .slick-arrow{
-  margin-top: 10.5vw;
+  margin-top: -0.5%;
 }
 .sli .slick-prev{
-  margin-left: 35%;
+  margin-left: 5%;
   font-size: 0px;
 }
 .sli .slick-next{
-  margin-right: 35%;
+  margin-right: 3%;
  
 }
 .card-wrapper7{
   position: relative;
   padding: 0 10px;
-  overflow: hidden;
   box-sizing: border-box;
 
 }
@@ -268,87 +301,102 @@
 
 @media(max-width: 1450px){
   .sli{
-    margin-top: -50%;
-    height: 27vw;
+    margin-top: -54%;
   } 
   .sli .slick-arrow{
-    margin-top: 17.5vw;
-  }  
+    margin-top: -1%;
+  }
   .sli .slick-prev{
-    margin-left: 25%;
+    margin-left: 5%;
     padding: 3px;
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 1.7vw;
+    height: 1.7vw;
   }
   .sli .slick-next{
-    margin-right: 25%;
+    margin-right: 2%;
     padding: 3px;
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 1.7vw;
+    height: 1.7vw;
+   
+  } 
+}
+@media(max-width: 1250px){
+  .sli{
+    margin-top: -60%;
+
+  } 
+  .sli .slick-arrow{
+    margin-top: -1%;
+  }
+  .sli .slick-prev{
+    margin-left: 6%;
+    padding: 1px;
+    width: 1.7vw;
+    height: 1.7vw;
+  }
+  .sli .slick-next{
+    margin-right: 2%;
+    padding: 1px;
+    width: 1.7vw;
+    height: 1.7vw;
    
   } 
 }
 @media(max-width: 1000px){
   .sli{
-    margin-top: -50%;
-    height: 29vw;
+    margin-top: -69%;
+
   } 
-  .sli .slick-arrow{
-    margin-top: 19vw;
-  }  
+
   .sli .slick-prev{
-    margin-left: 25%;
-    padding: 3px;
-    width: 2.5vw;
-    height: 2.5vw;
+    margin-left: 7%;
+    padding: 2px;
+    width: 2vw;
+    height: 2vw;
   }
   .sli .slick-next{
-    margin-right: 25%;
-    padding: 3px;
-    width: 2.5vw;
-    height: 2.5vw;
+    margin-right: 2%;
+    padding: 2px;
+    width: 2vw;
+    height: 2vw;
    
   } 
 }
 @media(max-width: 900px){
   .sli{
     margin-top: -80%;
-    height: 35vw;
+
   }
-  .sli .slick-arrow{
-    margin-top: 22.5vw;
-  }  
+ 
   .sli .slick-prev{
-    margin-left: 25%;
-    padding: 2px;
-    width: 2.5vw;
-    height: 2.5vw;
+    margin-left: 7%;
+    padding: 1px;
+    width: 2.3vw;
+    height: 2.3vw;
   }
   .sli .slick-next{
-    margin-right: 25%;
-    padding: 2px;
-    width: 2.5vw;
-    height: 2.5vw;
+    margin-right: 2%;
+    padding: 1px;
+    width: 2.3vw;
+    height: 2.3vw;
    
   }
  
 }
 @media(max-width: 800px){
   .sli{
-    margin-top: -80%;
-    height: 40vw;
+    margin-top: -85%;
+
   }
-  .sli .slick-arrow{
-    margin-top: 26vw;
-  }  
+
   .sli .slick-prev{
-    margin-left: 25%;
+    margin-left: 8%;
     padding: 2px;
     width: 2.5vw;
     height: 2.5vw;
   }
   .sli .slick-next{
-    margin-right: 25%;
+    margin-right: 2%;
     padding: 2px;
     width: 2.5vw;
     height: 2.5vw;
@@ -360,26 +408,21 @@
     margin-top: 0%;
     margin-left: 10%;
     width: 80%;
-    height: 45vw;
   }
   .card-ima7{
     width: 100vw;
-  }
-
-  .sli .slick-arrow{
-    margin-top: 29vw;
-  }  
+  } 
   .sli .slick-prev{
-    margin-left: 25%;
-    padding: 2px;
-    width: 3.5vw;
-    height: 3.5vw;
+    margin-left: 5%;
+    padding: 1px;
+    width: 3vw;
+    height: 3vw;
   }
   .sli .slick-next{
-    margin-right: 25%;
-    padding: 2px;
-    width: 3.5vw;
-    height: 3.5vw;
+    margin-right: 5%;
+    padding: 1px;
+    width: 3vw;
+    height: 3vw;
    
   }
 }
@@ -388,24 +431,20 @@
     margin-top: 0%;
     margin-left: 10%;
     width: 80%;
-    height: 55vw;
+
   }
   .card-ima7{
     width: 100vw;
   }
-
-  .sli .slick-arrow{
-    margin-top: 35vw;
-  }  
   .sli .slick-prev{
-    margin-left: 25%;
-    padding: 2px;
+    margin-left: 6%;
+    padding: 1px;
     width: 3.5vw;
     height: 3.5vw;
   }
   .sli .slick-next{
-    margin-right: 25%;
-    padding: 2px;
+    margin-right: 5%;
+    padding: 1px;
     width: 3.5vw;
     height: 3.5vw;
    
