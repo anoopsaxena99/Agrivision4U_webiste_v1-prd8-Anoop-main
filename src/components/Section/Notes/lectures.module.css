@@ -8,10 +8,10 @@
 .heading{
     font-weight: 700;
     font-size: 150%;
-    margin-left: 1%;
+    margin-left: 2%;
 }
 .cardsShow{
-    margin-left: 2%;
+    margin-left: 1%;
     display: flex;
     flex-wrap: wrap;
     width: 67%;
