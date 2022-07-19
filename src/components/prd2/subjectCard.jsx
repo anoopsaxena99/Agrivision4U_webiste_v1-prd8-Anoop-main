@@ -14,7 +14,7 @@ function SubjectCard({ onesub }) {
   return (
     <>
       <ViewLink to={{ pathname: `/courses/subject=${onesub}` }}>
-        <div>
+        <div className={styles.card}>
           <div className={styles.SliderContainer}>
             <div className={styles.cardContainer}>
               <img className={styles.img} src={Book} alt="" />
