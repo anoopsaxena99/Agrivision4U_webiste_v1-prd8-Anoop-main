@@ -104,7 +104,6 @@ function Layout({ courseId, chapterId }) {
             <>
               <div className={styles.container}>
                 <div className={styles.top}>
-                  <div className={styles.left}></div>
                   <div className={styles.right}>
                     <Search
                       items={items}

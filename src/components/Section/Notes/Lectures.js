@@ -108,9 +108,6 @@ const yes=0;
           {<>
             <div className={styles.container}>
               <div className={styles.top}>
-              <div className={styles.left}>
-          
-          </div>
                 <div className={styles.right}>
                   <Search items={items} recents={recents} yes={yes} searchHandler={searchHandler}/>
                   </div>

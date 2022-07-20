@@ -40,8 +40,6 @@ if(data) {
       <>
     {(data && data.liveClass!=undefined) ? (
       <div className={styles.container}>
-        <div className={styles.left}>
-        </div>
         <div className={styles.right}>
           <div className={styles.first}>
             <div className={styles.firstHeader}>

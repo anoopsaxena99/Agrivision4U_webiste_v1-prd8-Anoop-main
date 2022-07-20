@@ -14,7 +14,7 @@
 }
 .box{
     display: flex;
-  
+    margin-left: 20vw;
     gap: 10px;
 }
 .img{
@@ -41,6 +41,7 @@ border-radius: 12px;
 border: none;
 color: #FFFFFF;
 font-weight: 400;
+margin-top: 0.5vw;
 }
 .second{
 
