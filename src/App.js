@@ -50,7 +50,6 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
-
         <Route path="/aboutUs" exact component={AboutUs} />
         <Route path="/whychooseus" exact component={WhyChoose} />
         <Route path="/terms" exact component={TandC} />
