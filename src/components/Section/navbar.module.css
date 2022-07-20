@@ -11,8 +11,8 @@
 @media(max-width: 1000px) {
   .container{
     height: 0%;
-    width: 60% !important;
-    margin-left: 19%;
+    width: 40% !important;
+    margin-left: 0%;
    }
 
  }
@@ -21,9 +21,7 @@
 @media(max-width: 800px) {
  .container{
    height: 0%;
-   width: 70% !important;
-   margin-left: 16%;
+   width: 55% !important;
+   margin-left: 23%;
   }
 }
-
-
