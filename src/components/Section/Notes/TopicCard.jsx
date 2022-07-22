@@ -6,17 +6,31 @@ import styled from "styled-components";
 import { useLocation, Link } from "react-router-dom";
 import { baseURL } from "../../../Apis";
 import Search from "../Search";
-const NotesCard = ({obj,i,pagenumber,handelSub,completed,items})=> {
-  // console.log("dfejvejf",items);
+import { useHistory } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+//import { baseURL } from "../../../Apis";
+//import Search from "../Search";
+const NotesCard = ({
+  chapterId,
+  courseId,
+  obj,
+  i,
+  pagenumber,
+  handelSub,
+  completed,
+}) => {
+  const history = useHistory();
+  console.log("neeww", chapterId, courseId, obj, i, pagenumber);
+  const handleClick =()=> history.push(`/course/${courseId}/${chapterId}/${obj._id}`)
   return (
     <>
-        
-        <div className={styles.cards}  onClick={()=> {console.log(items,i)}} >
+      <div className={styles.cards} onClick={handleClick}>
+       
           <img src={subject} alt="topic" className={styles.img} />
 
-          <div className={styles.lower}>
+          <div className={styles.lower} >
           {/* <ViewLink key ={i} to={{pathname: `/topic/${obj._id}`, state: { topicsData:items }}}> */}
-          <ViewLink key ={i} to={{pathname: `/topic/${obj._id}`, state: { topicsData:items , topicIndex:{i}}}}>
+          <ViewLink key ={i} to={{pathname: `/topic/${obj._id}`, state: {topicIndex:{i}}}}>
             <div className={styles.about}>
               <p className={styles.number}>
                 {i + 1 + (pagenumber - 1) * 9}.
@@ -39,12 +53,11 @@ const NotesCard = ({obj,i,pagenumber,handelSub,completed,items})=> {
             >
               <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
             </svg>
-           
           </div>
-       
+
           <p className={styles.time}>30mintutes</p>
-        </div>
-       
+ 
+      </div>
         </>
       
       );
