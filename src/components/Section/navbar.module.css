@@ -8,6 +8,7 @@
    border-radius: 12px;
    
 }
+
 @media(max-width: 1000px) {
   .container{
     height: 0%;
@@ -25,3 +26,5 @@
    margin-left: 23%;
   }
 }
+
+
