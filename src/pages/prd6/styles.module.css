@@ -288,7 +288,7 @@ h1 {
 }
 @media only screen and (max-width: 1050px) {
   a {
-    display: none;
+    
   }
   .card91-body .card91-text {
     margin: 0;
