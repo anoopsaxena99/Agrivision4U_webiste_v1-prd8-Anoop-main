@@ -2,62 +2,33 @@ import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
-import Loader from "../../pages/Loader";
-import styled from "styled-components";
-import { borderRadius } from "@mui/system";
 
-const TopBreadCrumbs = ({props}) => {
-  // console.log('props', props.topicInfo.topicsData.chapter.topics)
-  if(props){
-      var Course=props.topicInfo.topicsData.course[0];
-      var Chapter=props.topicInfo.topicsData.chapter;
-      var topic=props.topicInfo.topicsData.chapter.topics[props.topicInfo.topicIndex.i];
-    }
-
-  // console.log('Course', Course);
-  // console.log('Chapter', Chapter);
-  // console.log('topic', topic);
-  // props.topicInfo.topicIndex.i
+const TopBreadCrumbs = () => {
   function handleClick(event) {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
   }
   return (
-    <>
-    {props?(
     <div
       role="presentation"
+      onClick={handleClick}
       style={{
         backgroundColor: "white",
         paddingBottom: "10px",
         display: "flex",
       }}
     >
-      <Breadcrumbs aria-label="breadcrumb" separator="›"  >
-        <a style={mystyle} href="/dashboard">
+      <Breadcrumbs aria-label="breadcrumb">
+        <Link underline="hover" color="#0B6E4F" href="/">
           Dashboard
-        </a>
-        <a style={mystyle} href={`/course/${Course._id}`}>
-          {Course.name}
-        </a>
-        <a style={mystyle} href={`/course/${Course._id}/${Chapter._id}`}>
-          {Chapter.name}
-        </a>
-        <Typography color="#0B6E4F">{topic.name}</Typography>
+        </Link>
+        <Link underline="hover" color="#0B6E4F" href="/some-route/">
+          Subject
+        </Link>
+        <Typography color="#0B6E4F">Topic</Typography>
       </Breadcrumbs>
-    </div>) : (<Loader/>)
-    }
-    </>
+    </div>
   );
-};
-const mystyle = {
-  color: "#39ac73	",
-  backgroundColor: "#F7F7F7",
-  padding: "9px",
-  fontFamily: "Roboto",
-  borderRadius:"10px",
-  fontWeight: "400",
-
 };
 
 export default TopBreadCrumbs;

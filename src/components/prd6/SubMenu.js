@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { baseURL } from "../../Apis";
+
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -12,25 +12,29 @@ import Divider from "@mui/material/Divider";
 import DescriptionIcon from "@mui/icons-material/Description";
 import TopicIcon from "@mui/icons-material/Topic";
 import SlowMotionVideoIcon from "@mui/icons-material/SlowMotionVideo";
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import QuizIcon from '@mui/icons-material/Quiz';
+import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
+import QuizIcon from "@mui/icons-material/Quiz";
+import { baseURL } from "../../Apis";
 
 const TopicHoverEffect = styled.div`
   &:hover {
-    color: #0B6E4F;
+    color: #0b6e4f;
   }
-
 `;
 
-const SubMenu = ({ sub, handleSetContent, handleSetContentType, handleSetCurrentOpenTopicId, isActive,handleSetctype,ctype }) => {
+const SubMenu = ({
+  item,
+  handleSetContent,
+  handleSetContentType,
+  handleSetCurrentOpenTopicId,
+  isActive,
+}) => {
   const [open, setOpen] = React.useState(false);
-  const [link, setLink] = useState("");
-  
+  console.log(item);
   const [subTopicMaterial, setSubTopicMaterial] = useState([]);
   const [currentContentType, setCurrentContentType] = useState(-1);
-  // console.log('sub', sub)
+
   const fetchSubTopicMaterial = async (id) => {
-    
     const response = await fetch(`${baseURL}/course/subtopics/${id}`, {
       method: "GET",
       headers: {
@@ -40,32 +44,27 @@ const SubMenu = ({ sub, handleSetContent, handleSetContentType, handleSetCurrent
     });
     const json = await response.json();
     if (json.success) {
-      setLink(json.data);
-      handleSetctype(json.contentType);
-      // console.log();
+      setSubTopicMaterial(json.data);
+      fetch(json.data)
+        .then((response) => {
+          return response.text();
+        })
+        .then((text) => {
+          handleSetContent(text);
+        });
+      // console.log("fetched", json.data);
+    }
   };
-  };
-console.log('link', link)
 
   const handleMaterialClick = (contentType) => {
-    handleSetCurrentOpenTopicId(sub._id)
-    fetchSubTopicMaterial(sub._id)
-    setCurrentContentType(contentType)
-    handleSetContentType(contentType)
-    if (link && contentType == 1 && ctype==1) {
-      handleSetContent(link);
-    } else if (link && contentType == 0 && ctype==0) {
-      let mark;
-
-      fetch(`${link}`).then((response)=>{
-        return response.text();
-      }).then((text)=>{
-        console.log("askjcnkasl ->",text);
-        mark=text;
-        handleSetContent(mark);
-      })
-      
-    }else{
+    handleSetCurrentOpenTopicId(item._id);
+    setCurrentContentType(contentType);
+    handleSetContentType(contentType);
+    if (contentType == 1) {
+      handleSetContent(subTopicMaterial);
+    } else if (contentType == 0) {
+      // handleSetContent(subTopicMaterial);
+    } else {
       // for other two sections
     }
   };
@@ -73,25 +72,28 @@ console.log('link', link)
   const handleTopicClick = () => {
     setOpen(!open);
     if (subTopicMaterial.length == 0) {
-      fetchSubTopicMaterial(sub._id);
+      fetchSubTopicMaterial(item._id);
     }
   };
-  
 
   return (
     <TopicHoverEffect>
       <List
-        sx={{ width: "100%", bgcolor: "#E9F0EF", color: isActive ? '#0B6E4F' : null }}
+        sx={{
+          width: "100%",
+          bgcolor: "#E9F0EF",
+          color: isActive ? "#0B6E4F" : null,
+        }}
         component="nav"
         aria-labelledby="nested-list-subheader"
       >
         <ListItemButton onClick={handleTopicClick}>
           <ListItemIcon>
-            <TopicIcon sx={{ color: isActive ? '#0B6E4F' : null }}/>
+            <TopicIcon sx={{ color: isActive ? "#0B6E4F" : null }} />
           </ListItemIcon>
           <ListItemText
-            primary={sub.name}
-            sx={{ textTransform: "capitalize"}}
+            primary={item.name}
+            sx={{ textTransform: "capitalize" }}
           />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
@@ -100,11 +102,14 @@ console.log('link', link)
             component="div"
             disablePadding
             onClick={() => handleMaterialClick(0)}
-            sx={{borderLeft: isActive && currentContentType === 0 ? '5px solid green': null}}
+            sx={{
+              borderLeft:
+                isActive && currentContentType === 0 ? "5px solid green" : null,
+            }}
           >
             <ListItemButton sx={{ pl: 4 }}>
               <ListItemIcon>
-                <DescriptionIcon sx={{ color: isActive ? '#0B6E4F' : null }}/>
+                <DescriptionIcon sx={{ color: isActive ? "#0B6E4F" : null }} />
               </ListItemIcon>
               <ListItemText primary="Notes" />
             </ListItemButton>
@@ -113,11 +118,16 @@ console.log('link', link)
             component="div"
             disablePadding
             onClick={() => handleMaterialClick(1)}
-            sx={{borderLeft: isActive && currentContentType === 1 ? '5px solid green': null}}
+            sx={{
+              borderLeft:
+                isActive && currentContentType === 1 ? "5px solid green" : null,
+            }}
           >
             <ListItemButton sx={{ pl: 4 }}>
               <ListItemIcon>
-                <SlowMotionVideoIcon sx={{ color: isActive ? '#0B6E4F' : null }}/>
+                <SlowMotionVideoIcon
+                  sx={{ color: isActive ? "#0B6E4F" : null }}
+                />
               </ListItemIcon>
               <ListItemText primary="Video" />
             </ListItemButton>
@@ -126,11 +136,16 @@ console.log('link', link)
             component="div"
             disablePadding
             onClick={() => handleMaterialClick(2)}
-            sx={{borderLeft: isActive && currentContentType === 2 ? '5px solid green': null}}
+            sx={{
+              borderLeft:
+                isActive && currentContentType === 2 ? "5px solid green" : null,
+            }}
           >
             <ListItemButton sx={{ pl: 4 }}>
               <ListItemIcon>
-                <OndemandVideoIcon sx={{ color: isActive ? '#0B6E4F' : null }}/>
+                <OndemandVideoIcon
+                  sx={{ color: isActive ? "#0B6E4F" : null }}
+                />
               </ListItemIcon>
               <ListItemText primary="Watched Videos" secondary="Comming Soon" />
             </ListItemButton>
@@ -139,13 +154,16 @@ console.log('link', link)
             component="div"
             disablePadding
             onClick={() => handleMaterialClick(3)}
-            sx={{borderLeft: isActive && currentContentType === 3 ? '5px solid green': null}}
+            sx={{
+              borderLeft:
+                isActive && currentContentType === 3 ? "5px solid green" : null,
+            }}
           >
             <ListItemButton sx={{ pl: 4 }}>
               <ListItemIcon>
-                <QuizIcon sx={{ color: isActive ? '#0B6E4F' : null }}/>
+                <QuizIcon sx={{ color: isActive ? "#0B6E4F" : null }} />
               </ListItemIcon>
-              <ListItemText primary="Sectional Test" secondary="Comming Soon"/>
+              <ListItemText primary="Sectional Test" secondary="Comming Soon" />
             </ListItemButton>
           </List>
         </Collapse>

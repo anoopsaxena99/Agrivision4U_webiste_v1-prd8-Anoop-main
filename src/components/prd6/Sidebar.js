@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import SubMenu from "./SubMenu";
-
-// import courseData from "../../data.json";
-
+import { baseURL } from "../../Apis";
+import courseData from "../../data.json";
+import Loader from "../../pages/Loader";
 const SidebarNav = styled.nav`
   background: #e9f0ef;
   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
@@ -12,19 +12,59 @@ const SidebarNav = styled.nav`
 
 const SidebarWrap = styled.div``;
 
-const Sidebar = ({ handleSetContent, handleSetContentType, handleSetCurrentOpenTopicId, currentOpenTopicId,topicInfo,handleSetctype,ctype }) => {
+const Sidebar = ({
+  handleSetContent,
+  handleSetContentType,
+  handleSetCurrentOpenTopicId,
+  currentOpenTopicId,
+  courseId,
+  chapterId,
+  topicId,
+}) => {
+  const [coursedata, setcoursedata] = new useState(null);
+  const [subdata, setsubdata] = new useState([]);
+  useEffect(() => {
+    const fun = async (e) => {
+      const response = await fetch(
+        `${baseURL}/course/${courseId}?queryParam=1&chapterID=${chapterId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const json = await response.json();
+      if (json.success) {
+        setcoursedata(json);
+        setsubdata(
+          json.data.chapter.topics.filter((t) => {
+            return t._id === topicId;
+          })
+        );
+      }
+    };
+    fun();
+
+    // eslint-disable-next-line
+  }, []);
+  console.log("hello ", coursedata);
+  console.log(subdata);
+  // if (subdata != null)
+  //   subdata = subdata.filter((t) => {
+  //     return t._id === topicId;
+  //   });
+
   const [subTopics, setSubTopics] = new useState([]);
-  const courseData=topicInfo.topicsData;
-  console.log(topicInfo);
+
   const handleSetSubTopics = (courseData) => {
-    // console.log(topicInfo.topicIndex.i)
-    // console.log(courseData.chapter.topics)
     if (subTopics.length == 0)
-      courseData.chapter.topics[topicInfo.topicIndex.i].subTopics.map((s) =>
-        setSubTopics(prevState =>[...prevState, s])
+      courseData.data.chapter.topics.map((topicData) =>
+        setSubTopics([...subTopics, ...topicData.subTopics])
       );
   };
-
+  console.log("subdata => ", subdata);
   useEffect(() => {
     handleSetSubTopics(courseData);
   }, []);
@@ -32,25 +72,26 @@ const Sidebar = ({ handleSetContent, handleSetContentType, handleSetCurrentOpenT
   const [sidebar] = useState(true);
   return (
     <>
-      <SidebarNav sidebar={sidebar}>
-        <SidebarWrap>
-          {subTopics.map((sub, index) => {
-            // console.log('sub', sub)
-            return (
-              <SubMenu
-                sub={sub}
-                key={index}
-                handleSetContent={handleSetContent}
-                handleSetContentType={handleSetContentType}
-                handleSetCurrentOpenTopicId={handleSetCurrentOpenTopicId}
-                isActive={currentOpenTopicId === sub._id}
-                handleSetctype={handleSetctype}
-                ctype={ctype}
-              />
-            );
-          })}
-        </SidebarWrap>
-      </SidebarNav>
+      {subdata.length === 0 ? (
+        <Loader />
+      ) : (
+        <SidebarNav sidebar={sidebar}>
+          <SidebarWrap>
+            {subdata[0].subTopics.map((chapter, index) => {
+              return (
+                <SubMenu
+                  item={chapter}
+                  key={index}
+                  handleSetContent={handleSetContent}
+                  handleSetContentType={handleSetContentType}
+                  handleSetCurrentOpenTopicId={handleSetCurrentOpenTopicId}
+                  isActive={currentOpenTopicId === chapter._id}
+                />
+              );
+            })}
+          </SidebarWrap>
+        </SidebarNav>
+      )}
     </>
   );
 };
