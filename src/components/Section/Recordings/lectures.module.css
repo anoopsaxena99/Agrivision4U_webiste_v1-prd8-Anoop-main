@@ -221,3 +221,17 @@
         gap: 3%;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .heading {
+        font-weight: 700;
+        font-size: 150%;
+        margin-left: 5%;
+    }
+}
+@media (max-width: 300px) {
+ 
+    .heading{
+        font-size: 20px;
+    }
+}
