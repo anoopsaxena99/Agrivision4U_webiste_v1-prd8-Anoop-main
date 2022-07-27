@@ -226,4 +226,96 @@
         justify-content: center;
         gap: 3%;
     }
+    .heading{
+        margin-left: 5%;
+    }
+}
+@media screen and (max-width: 540px) {
+
+    .cardsShow {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 75%;
+        height: 55vw;
+        max-width: 75%;
+        padding: 1.5%;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+        margin-bottom: 15%;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13);
+        border-radius: 12px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto';
+        font-style: normal;
+
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 3%;
+    }
+    .heading{
+        margin-left: 5%;
+    }
+}
+@media screen and (max-width: 400px) {
+
+    .cardsShow {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .heading{
+        margin-left: 5%;
+    }
+    .about {
+        display: flex;
+        font-weight: 600;
+    }
+    
+    .lower {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .number{
+        font-size: 90%;
+    }
+    .text {
+        display: flex;
+        font-size: 90%;
+        margin-left: 2%;
+        align-items: center;
+        margin: 0;
+    }
+    
+}
+@media (max-width: 300px) {
+    .cards{
+        height: 65vw;
+    }
+    .heading{
+        font-size: 20px;
+    }
 }
