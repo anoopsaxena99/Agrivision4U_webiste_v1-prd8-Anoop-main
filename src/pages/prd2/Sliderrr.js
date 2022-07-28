@@ -11,7 +11,7 @@ import { useState } from "react";
 function ImageSlider2({ pack, value }) {
   // console.log(value);
   let settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,

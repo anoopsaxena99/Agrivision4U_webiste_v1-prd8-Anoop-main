@@ -87,8 +87,8 @@ const Button1 = styled.button`
   flex-direction: "row";
   align-items: center;
   @media screen and (max-width: 1000px) {
-    width: 90%;
-    height: 25%;
+    width: 70%;
+    height: 5%;
   }
 `;
 

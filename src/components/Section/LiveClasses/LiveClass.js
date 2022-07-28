@@ -40,6 +40,8 @@ if(data) {
       <>
     {(data && data.liveClass!=undefined) ? (
       <div className={styles.container}>
+        <div className={styles.left}>
+        </div>
         <div className={styles.right}>
           <div className={styles.first}>
             <div className={styles.firstHeader}>
@@ -72,7 +74,7 @@ if(data) {
           </div>
         </div>
       </div>
-    ) : (<img src={LiveClass} alt="Live-Class" style={{width: "65%", height: "auto" ,'margin-left':'33%'}} />)}
+    ) : (<img src={LiveClass} alt="Live-Class" style={{width: "65%", height: "auto" ,'margin-left':'18%'}} />)}
     </>
     )}
     </>

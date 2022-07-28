@@ -34,7 +34,7 @@ export default class SlickGoTo extends React.Component {
           min={0}
           max={3}
         />
-        <Slider ref={slider => (this.slider = slider)} {...settings}>
+        <Slider ref={slider => (this.slider = slider)} {...settings} className='sli3'>
           <div>
             <img src={this.baseUrl + "/abstract01.jpg"} />
           </div>

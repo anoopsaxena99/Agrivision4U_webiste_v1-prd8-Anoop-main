@@ -342,9 +342,10 @@ const EmailInput = styled.input`
     font-size: 14px;
   }
   ${device.mobileL} {
+    display: block;
     padding: 8px 12px;
     border-radius: 6px;
-    width: 300px;
+    width: 200px;
     font-size: 14px;
   }
 
@@ -398,6 +399,9 @@ const FooterLogo = styled.div`
   img {
     height: 125px;
     margin-right: 8px;
+  }
+  ${device.mobileL} {
+    display: block;
   }
 `;
 //copyright styles

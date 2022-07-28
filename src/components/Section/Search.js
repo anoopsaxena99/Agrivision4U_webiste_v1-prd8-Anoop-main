@@ -2,7 +2,7 @@ import React from "react";
 
 // import Bookmark from "@material-ui/icons";
 import subject from "./Recordings/subject.jpg";
-import styles from "./Recordings//search.module.css";
+import styles from "./Recordings/search.module.css";
 import styled from "styled-components";
 import {Link } from "react-router-dom";
 function Search({items,recents, yes, searchHandler}) {
@@ -28,10 +28,9 @@ function Search({items,recents, yes, searchHandler}) {
 
   return (
     <>
-      <div className={styles.container} >
+      <div className={styles.container}>
         <div className={styles.first}>
-          <p className={styles.firstHeading}>{yes ? ("Recorded Lectures"): ("Notes")}</p>
-
+        <p className={styles.firstHeading}>{yes ? ("Recorded Lectures"): ("Notes")}</p>
           <form onSubmit={searchTopic}>
           <div className={styles.box}>
             <input
@@ -58,13 +57,14 @@ function Search({items,recents, yes, searchHandler}) {
           <div className={styles.cards} onClick={()=> {console.log(items,idx)}}>
             <img src={subject} alt="topic" className={styles.img} />
             <div className={styles.lower}>
-            <ViewLink key ={i} to={{pathname: `/topic/${recents[i]._id}`, state: { topicsData:items , topicIndex:{i} }}}>
+            <ViewLink key ={i} to={{pathname: `/topic/${recents[i]._id}`, state: { topicIndex:{i} }}}>
               <div className={styles.about}>
                 <p className={styles.number}>{idx+1}.</p>
                 <p className={styles.text}>{recents[i].name}</p>
               </div>
               </ViewLink>
-              <svg
+             <svg
+                className={styles.icon}
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"

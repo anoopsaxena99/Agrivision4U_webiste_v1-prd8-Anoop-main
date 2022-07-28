@@ -16,7 +16,7 @@ const TopicLayout = ({ courseId, chapterId }) => {
   // Active Button State
   const [active, setActive] = useState(1);
   return (
-    <div style={{display:'flex', flexDirection: 'row'}}>
+    <>
       <SideNavBar className={styles.container}>
         <Button1
           className={active === 1 ? `${classes.activeButton1}` : ""}
@@ -59,14 +59,14 @@ const TopicLayout = ({ courseId, chapterId }) => {
 
          <div className={`${active !== 4 ? "hidden" : ""}`}>
                <div>
-               <img src="/images/coming-soon.svg" alt="coming-soon" style={{height:'600px' }}></img>
+               <img src="/images/coming-soon.svg" alt="coming-soon" style={{height:'400px',width:'100%','margin-left':'5%'}}></img>
               </div>
          </div>
 
 
       </Content>
       
-    </div>
+    </>
   );
 };
 const SideNavBar = styled.div`
