@@ -52,8 +52,6 @@ export const Layout = ({ courseId }) => {
     fun();
   }, []);
 
-  console.log(user);
-
   return items ? (
     <>
       <Navbar course rhead={cname} />

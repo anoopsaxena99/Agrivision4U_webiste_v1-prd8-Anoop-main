@@ -19,6 +19,16 @@ import Subjects from "./Subjects";
 
 function Activity({ items, name, courseId, progress }) {
   // Active Button State
+  console.log(courseId);
+  console.log(
+    progress.courses.filter((e) => {
+      return e._id == courseId;
+    })
+  );
+  const pr = progress.courses.filter((e) => {
+    return e._id == courseId;
+  })[0];
+  // console.log("pr", pr.);
   const [active, setActive] = React.useState(0);
   const SetView = (active) => {
     setActive(active);
@@ -34,8 +44,10 @@ function Activity({ items, name, courseId, progress }) {
     i = i + 1;
     return v;
   });
-  console.log(progress);
-  const percentage = 12.5;
+  // console.log(progress);
+  const percentage = Math.round(
+    (pr.completedSubTopics / pr.totalSubTopics) * 100
+  );
   return (
     <>
       <div className={styles.container}>
@@ -55,14 +67,16 @@ function Activity({ items, name, courseId, progress }) {
             <p className={styles.number}>{percentage}%</p>
             <p className={styles.text}>PROGRESS</p>
           </div>
-          <p className={styles.topic}>5/7 Topics Completed</p>
+          <p className={styles.topic}>
+            {pr.completedSubTopics}/{pr.totalSubTopics} Sub-Topics Completed
+          </p>
           <div className={styles.streak}>
             <div className={styles.streakContent}>
-              <p className={styles.streakNumber}>8</p>
+              <p className={styles.streakNumber}>{progress.currentStreakDay}</p>
               <p className={styles.streakText}>Current Streak</p>
             </div>
             <div className={styles.streakContent}>
-              <p className={styles.streakNumber}>8</p>
+              <p className={styles.streakNumber}>{progress.longestStreakDay}</p>
               <p className={styles.streakText}>Max Streak</p>
             </div>
           </div>
