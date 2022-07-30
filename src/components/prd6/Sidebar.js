@@ -2,26 +2,24 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import SubMenu from "./SubMenu";
 
-// import courseData from "../../data.json";
-
-const SidebarNav = styled.nav`
-  background: #e9f0ef;
-  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-  transition: 350ms;
-`;
-
 const SidebarWrap = styled.div``;
 
-const Sidebar = ({ handleSetContent, handleSetContentType, handleSetCurrentOpenTopicId, currentOpenTopicId,topicInfo,handleSetctype,ctype }) => {
+const Sidebar = ({
+  handleSetContent,
+  handleSetContentType,
+  handleSetCurrentOpenTopicId,
+  currentOpenTopicId,
+  topicInfo,
+  handleSetctype,
+  ctype,
+}) => {
   const [subTopics, setSubTopics] = new useState([]);
-  const courseData=topicInfo.topicsData;
-  console.log(topicInfo);
+  const courseData = topicInfo.topicsData;
+
   const handleSetSubTopics = (courseData) => {
-    // console.log(topicInfo.topicIndex.i)
-    // console.log(courseData.chapter.topics)
     if (subTopics.length == 0)
       courseData.chapter.topics[topicInfo.topicIndex.i].subTopics.map((s) =>
-        setSubTopics(prevState =>[...prevState, s])
+        setSubTopics((prevState) => [...prevState, s])
       );
   };
 
@@ -32,10 +30,9 @@ const Sidebar = ({ handleSetContent, handleSetContentType, handleSetCurrentOpenT
   const [sidebar] = useState(true);
   return (
     <>
-      <SidebarNav sidebar={sidebar}>
+      <div sidebar={sidebar}>
         <SidebarWrap>
           {subTopics.map((sub, index) => {
-            // console.log('sub', sub)
             return (
               <SubMenu
                 sub={sub}
@@ -50,7 +47,7 @@ const Sidebar = ({ handleSetContent, handleSetContentType, handleSetCurrentOpenT
             );
           })}
         </SidebarWrap>
-      </SidebarNav>
+      </div>
     </>
   );
 };
