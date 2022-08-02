@@ -9,7 +9,7 @@ export const TabHeaderContainer = styled.div`
 export const StylizedTab = styled.button`
   color: #5f5f5f;
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 10px;
   font-size: 1.5rem;
   font-weight: 500;
   background-color: transparent;
@@ -46,9 +46,4 @@ export const inactiveTab = {
   opacity: 1
 };
 export const TabSlider = styled.div`
-  width: ${(props) => `${props.width}px`};
-  height: 4px;
-  background-color: green;
-  transition: 0.2s;
-  transform: ${(props) => `translateX(${props.width * props.index}px)`};
-`;
+ `;

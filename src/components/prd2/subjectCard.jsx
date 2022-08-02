@@ -8,19 +8,20 @@ import "slick-carousel/slick/slick-theme.css";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import {useHistory} from "react-router-dom";
 function SubjectCard({ onesub }) {
-  // console.log("kh", onesub);
-
+  console.log("kh", onesub);
+  const history = useHistory();
+  const handleClick =()=> history.push(`/courses/subject=${onesub}` )
+  
   return (
     <>
-      <ViewLink to={{ pathname: `/courses/subject=${onesub}` }}>
-        <div>
-          <div className={styles.SliderContainer}>
+            <div className={styles.SliderContainer} onClick={handleClick}>
             <div className={styles.cardContainer}>
               <img className={styles.img} src={Book} alt="" />
 
               <div className={styles.cardHeading}>
-                <p>{onesub}</p>
+                <p>{onesub.name}</p>
               </div>
               <div className={styles.cardEnrolled}>
                 <p>1.2k students</p>
@@ -42,12 +43,10 @@ function SubjectCard({ onesub }) {
                 <span className={styles.cardStar}>
                   <FaStar></FaStar>
                 </span>
-                <span className={styles.cardDetails}>(21K)</span>
+                <span className={styles.cardDetails}>(218248)</span>
               </div>
             </div>
           </div>
-        </div>
-      </ViewLink>
     </>
   );
 }

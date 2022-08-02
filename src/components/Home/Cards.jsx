@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Container } from "../global/Global";
 import { Button } from "../global/Global";
 import device from "../Util/MediaQuery";
@@ -25,26 +25,33 @@ const Cards = () => {
           <Card key={index} item={item} />
         ))}
       </StyledCards>
-
+      <h1 style= {{marginLeft:"2rem", color:"rgb(26,26,26)"}}> A  Message  from  our  founder</h1>
+      <Background>
       <StyledMsgs>
+        
+         
+          
+          <MessageBox2>
+            <h4 style={{margin:"0px 0px 30px"}}>To share great modern and contemporary art with the public</h4>
+            <p style={{margin:"30px 0px", fontSize:"14px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. 
+adipiscing elit, sed do eiusmod tempor incididunt ut labo.</p>
+            <div style={{display: "flex",padding:"2rem",justifyContent: "space-between"}}>
+              <StyledButton style = {{backgroundColor:"rgb(19,174,126)"}}>Explore courses</StyledButton>
+              <StyledButton style = {{backgroundColor:"rgb(19,174,126)"}}>Test yourself</StyledButton>
+
+            </div>
+          
+          </MessageBox2>
           <MessageBox>
-            <div style={{width:"100px", height: "100px",marginBottom:"20px", borderRadius:"100%", background: "rgba(11, 110, 79, 1)"}}></div>
-            <h4>A message from our founder</h4>
+            <div style={{width:"120px", height: "120px",margin:'auto',borderRadius:"100%", background: "grey"}}></div>
+      
             <p style={{margin:"20px 0px", fontSize:"14px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. 
 adipiscing elit, sed do eiusmod tempor incididunt ut labo.</p>
-            <h5 style={{float:"right"}}>-Raju Prajapati</h5>
+            <h6 style={{float:"right"}}><strong> -Raju Prajapati </strong></h6>
           </MessageBox>
-
-          <MessageBox2>
-            <h4 style={{margin:"0px 0px 40px"}}>To share great modern and contemporary art with the public</h4>
-            <p style={{margin:"40px 0px", fontSize:"14px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. 
-adipiscing elit, sed do eiusmod tempor incididunt ut labo.</p>
-            <div style={{display: "flex",padding:"10px", justifyContent: "space-between"}}>
-              <StyledButton>Explore courses</StyledButton>
-              <StyledButton>Test yourself</StyledButton>
-            </div>
-          </MessageBox2>
+         
       </StyledMsgs>
+      </Background>
       <StyledMsgs2>
         <Img src="/images/sneakpeakpic.svg" alt="sneak-peak"/>
         <MessageBox3>
@@ -91,6 +98,11 @@ const Card = ({ item }) => {
   );
 };
 
+const Background = styled.div`
+background-color:rgb(197,220,213);
+height:24rem;
+
+`
 const Img = styled.img`
     width: 750px;
     ${device.tablet}{
@@ -123,6 +135,7 @@ const StyledMsgs = styled(Container)`
   align-items: center;
   justify-content: center;
   gap: 120px;
+  
 `;
 
 const StyledMsgs2 = styled(Container)`
@@ -133,6 +146,16 @@ const StyledMsgs2 = styled(Container)`
   align-items: center;
   justify-content: center;
   gap: 30px;
+  }
+  ${device.mobileL}{
+    margin-top:700px;
+  };
+  ${device.tablet}{
+    margin-top:700px;
+  }
+  ${device.laptop}{
+    margin-top:700px;
+  }
 `;
 
 const StyledMsgs3 = styled(Container)`
@@ -147,22 +170,28 @@ const StyledMsgs3 = styled(Container)`
   justify-content: center;
   border-radius: 12px;
   gap: 60px;
-`;
-
+`
 const TextCont = styled.div`
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-`;
+`
 
 const MessageBox = styled.div`
-    width: 450px;
+    width: 28.12rem;
+    height:31.25rem;
+    margin-top:-60px;
+    margin-bottom:-60px;
     background: white;
+    border:30px solid rgb(197,220,213);
     padding: 20px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13);
-    border-radius: 12px;
+  }
+    ${device.mobileL}{
+    width:20rem;
+    }
+    ;
 `
 
 const MessageBox3 = styled.div`
@@ -172,11 +201,18 @@ const MessageBox3 = styled.div`
 `
 
 const MessageBox2 = styled.div`
-    width: 600px;
+    width: 37.5rem;
+    height:22rem;
     background: white;
-    padding: 45px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.13);
-    border-radius: 12px;
+    padding: 35px;
+    border:25px solid rgb(197,220,213);
+      }
+    ${device.mobileL}{
+    width:8 rem;
+    height:auto;
+    border:15px solid rgb(197,220,213);
+    }
+    
 `
 
 const StyledButton = styled(Button)`

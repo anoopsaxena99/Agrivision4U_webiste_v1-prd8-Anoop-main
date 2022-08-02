@@ -2,7 +2,7 @@ import React from "react";
 
 import Notes from "./Lectures";
 import Search from "../Recordings/Search";
-import styles from "../Recordings/record.module.css";
+import styles from "../Recordings/notes.module.css";
 import SectionNavbar from "../NavbarSection";
 import Navbar from "../../global/Navbar"
 import Footer from "../../global/Footer";

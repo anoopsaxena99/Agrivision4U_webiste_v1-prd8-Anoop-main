@@ -104,6 +104,7 @@ function Layout({ courseId, chapterId }) {
             <>
               <div className={styles.container}>
                 <div className={styles.top}>
+                  <div className={styles.left}></div>
                   <div className={styles.right}>
                     <Search
                       items={items}
@@ -117,7 +118,13 @@ function Layout({ courseId, chapterId }) {
                 <div className={styles1.cardsShow}>
                   {State.map((Obj, i) => (
                     <LecturesCard
-                    obj={Obj} i={i} pagenumber={pagenumber} handelSub={handelSub} completed={completed} items={items}
+                      courseId={courseId}
+                      chapterId={chapterId}
+                      obj={Obj}
+                      i={i}
+                      pagenumber={pagenumber}
+                      handelSub={handelSub}
+                      completed={completed}
                     />
                   ))}
                 </div>

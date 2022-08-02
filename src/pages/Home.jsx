@@ -1,6 +1,7 @@
 // import Bottom from "../components/Home/Bottom";
 import Cards from "../components/Home/Cards";
 import Reviews from "../components/Home/Reviews";
+import Services from "../components/Home/Services";
 import Carousel1 from "../components/Home/Carousel2";
 import Top from "../components/Home/Top";
 import Work from "../components/Home/Work";
@@ -274,6 +275,7 @@ const handleMark = async () => {
       <Navbar />
       <Top />
       <Cards />
+      <Services/>
       <Work />
       <Carousel1/>
       <Reviews />

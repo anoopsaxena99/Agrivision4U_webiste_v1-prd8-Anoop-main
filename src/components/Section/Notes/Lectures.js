@@ -1,7 +1,7 @@
 import React from "react";
 import subject from "./subject.jpg";
 import { useEffect, useState } from "react";
-import styles from "../Recordings/record.module.css";
+import styles from "../Recordings/notes.module.css";
 import styles1 from "./lectures.module.css";
 import { useLocation, Link } from "react-router-dom";
 import Loader from "../../../pages/Loader";
@@ -108,6 +108,9 @@ const yes=0;
           {<>
             <div className={styles.container}>
               <div className={styles.top}>
+              <div className={styles.left}>
+          
+          </div>
                 <div className={styles.right}>
                   <Search items={items} recents={recents} yes={yes} searchHandler={searchHandler}/>
                   </div>
@@ -116,7 +119,9 @@ const yes=0;
             <div className={styles1.cardsShow}>
                 {State.map((Obj, i) => (
                   <NotesCard obj={Obj} i={i} pagenumber={pagenumber} handelSub={handelSub} completed={completed} items={items}/>
+                  
                 ))}
+               
             </div>
         <div className={styles1.pagination}>
       

@@ -48,9 +48,4 @@ export const inactiveTab = {
   opacity: 1
 };
 export const TabSlider = styled.div`
-  width: ${(props) => `${props.width}px`};
-  height: 4px;
-  background-color: green;
-  transition: 0.2s;
-  transform: ${(props) => `translateX(${props.width * props.index}px)`};
-`;
+ `;
