@@ -5,38 +5,38 @@ import useWindowDimensions from "../Util/useWindowDimensions";
 
 
 const data = [
-  {
+  {edudetails:"IIT Guwahati",
     reviewer: "Pooja Prakash Kesarkar",
     review:
       "The manner of teaching is so wonderful and refreshing! They are patient, supportive and know how to motivate students.",
     image: "/images/Testi/Pooja.png",
   },
-  {
+  {edudetails:"IIT Guwahati",
     reviewer: "Ansu Mary Varghese",
     review:"I firmly believe that the support and guidance of AgriVision4U helped me clear the GATE 2021 for the 1st time.",
     image: "/images/Testi/Ansu.png",
   },
-  {
+  {edudetails:"IIT Guwahati",
     reviewer: "Arpit Patel",
     review:"When I started my Preparation for GATE, I was very concerned. AgriVison4U played a vital role throughout my preparation journey.",
     image: "/images/Testi/Arpit.png",
   },
-  {
+  {edudetails:"IIT Guwahati",
     reviewer: "Venkatalakshmi D",
     review:"AgriVision4U is a great learning platform. It helped me gain a lot of experience through my internship and helped me build a robust skillset.",
     image: "/images/Testi/Venkatalakshmi.png",
   },
-  {
+  {edudetails:"IIT Guwahati",
     reviewer: "Ritika Padmakar Chaudhari",
     review:"Absolutely Awesome All the learning through Agrivision4U is totally worth it. Entire Manuals are very informative and easy to understand.",
     image: "/images/Testi/Ritika.png",
   },
-  {
+  {edudetails:"IIT Guwahati",
     reviewer: "Vibha Bhatt",
     review:"AgriVision4U brings to me exclusive detailed coverage of the entire syllabus of GATE. ",
     image: "/images/Testi/Vibha.png",
   },
-  {
+  { edudetails:"IIT Guwahati",
     reviewer: "Abhilash Arbal",
     review:"I am very thankful towards AgriVision4U for training me for GATE exam. I have had a great experience at AgriVision4U.",
     image: "/images/Testi/Abhilash.png",
@@ -65,8 +65,9 @@ const Work = () => {
   return (
     <Wrapper>
         <MainHeader>Meet Our Faculty</MainHeader>
-        <BackBox>
+        
       <ReviewContainer>
+      <BackBox>
         <Box>
           <Img onClick={()=>left()} src="/images/LeftButtonWhite.svg" alt="" />
           <ReviewSlider className="flex flex-aic flex-jcc slide">
@@ -74,10 +75,11 @@ const Work = () => {
               return (
                 <>
                 <ReviewBox>
-                <div>
+                <div style={{display:'flex',flexDirection:'row'}}>
                   <img  style={{width:"90px",borderRadius: "50%", marginLeft: "20px",marginBottom:"15px"}}  src={data.image} alt="" />
+                  <div style={{margin:"auto 5x"}} ><strong>{data.reviewer}</strong></div>
+                  <div style={{margin :'auto'}}>{data.edudetails}</div>
                 </div>
-                <div style={{margin:"auto 20px"}} ><strong>{data.reviewer}</strong></div>
               <div style={{padding:"20px",height:"11rem"}} >
                 {data.review}
               </div>
@@ -88,12 +90,12 @@ const Work = () => {
           </ReviewSlider>
           <Img onClick={()=>right()} src="/images/RightButtonWhite.svg" alt="" />
         </Box>
+        </BackBox>
       </ReviewContainer>
-      </BackBox>
+      
     </Wrapper>
   );
 };
-
 const Wrapper = styled.section`
   background: white;
 `;
@@ -102,16 +104,18 @@ const Img = styled.img`
   cursor: pointer;
 `
 const BackBox = styled.div`
+margin-top:30px;
   background-color: #0B6E4F;
-  height: 350px;
+  height: 310px;
 `
 const ReviewBox = styled.div`
-    background-color:white;
+    background-image: linear-gradient(rgb(102,210,148),rgb(4,130,99));
     width: 20rem;
-    height: 30rem;
+    height: 45rem;
     padding: 20px;
     display: flex;
-    color:#5F5F5F;
+    margin-top: ;
+    color:white;
     margin-right: 140px;
     flex-direction: column;
     font-size: 15px;
@@ -161,7 +165,8 @@ const Box = styled.div`
 
 `
 const MainHeader = styled.div`
-  margin-bottom: 1rem;
+margin-top:4rem;
+  margin-bottom: 3rem;
   text-align: center;
   font-weight: 600;
   font-size: 40px;

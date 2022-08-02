@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { Container } from "../global/Global";
 import device from "../Util/MediaQuery";
 import useWindowDimensions from "../Util/useWindowDimensions";
-
+import React from "react";
+//import ReactDOM from "react-dom";
+//import Carousel from "react-elastic-carousel";
+//import Item from "./Item";
+//import "./reviews.css";
 
 const data = [
   {
@@ -44,22 +48,30 @@ const data = [
 ];
 
 
+
+
 const Reviews = () => {
   const { width } = useWindowDimensions();
   function right(){
     if(width<=device.mobileL){
-      document.querySelector(".slider").scrollLeft +=380;
+      document.querySelector(".slider").scrollLeft +=440;
+    }
+    if (width>=device.tablet){
+      document.querySelector(".slider").scrollLeft += 1240;
     }
     else{
-      document.querySelector(".slider").scrollLeft +=460;
+      document.querySelector(".slider").scrollLeft +=920;
     }
   }
   function left(){
     if(width<=device.mobileL){
-      document.querySelector(".slider").scrollLeft -=380;
+      document.querySelector(".slider").scrollLeft -=440;
+    }
+    if (width>=device.tablet){
+      document.querySelector(".slider").scrollLeft -= 1240;
     }
     else{
-      document.querySelector(".slider").scrollLeft -=460;
+      document.querySelector(".slider").scrollLeft -=920;
     }
   }
   return (
@@ -74,16 +86,17 @@ const Reviews = () => {
               return (
                 <>
                 <ReviewBox>
-              <div style={{padding:"20px",height:"11rem"}} >
+              <Innertext style={{padding:"10px",marginTop:'10px',fontSize:'20px'}} >
                 {data.review}
-              </div>
-              <div style={{display: "flex", flexDirection:"row"}} >
+              </Innertext>
+              <div style={{display: "flex", flexDirection:"row",marginTop:"10px"}} >
 
-                <div>
-                  <img  style={{width:"60px",borderRadius: "50%"}}  src={data.image} alt="" />
+                <div style={{margin:"auto"}}>
+                  <img  style={{borderRadius: "50%"}}  src={data.image} alt="" />
+                  <strong style={{marginLeft:'12px'}}>{data.reviewer}</strong>
+
                 </div>
-                <div style={{margin:"auto 20px"}} ><strong>{data.reviewer}</strong></div>
-
+                
               </div>
             </ReviewBox>
               </>
@@ -97,32 +110,63 @@ const Reviews = () => {
   );
 };
 
+
+const Innertext = styled.div`
+margin-bottom:30px;
+}
+${device.mobileM}{
+  margin-bottom:0;
+  font-size:15px;
+}
+
+`
+
 const Wrapper = styled.section`
   background: white;
-`;
+
+`
 const Img = styled.img`
-  width: 40px;
+width: 55px;
   cursor: pointer;
+}
+${device.mobileM}{
+  display:none;
+}
+${device.mobileL}{
+  display:none;
+}
+
 `
 const ReviewBox = styled.div`
-    width: 20rem;
+    width: 100%;
     padding: 20px;
     display: flex;
     color:#5F5F5F;
     margin-right: 140px;
     flex-direction: column;
     overflow: hidden;
-    height: 20rem;
+    height: 300px;
     font-size: 15px;
-    box-shadow: 0px 0px 24px rgba(0, 0, 0, 10%);
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 12%);
     border-radius: 10px;
     &:last-child{
       margin-right: 0px;
     }
+    ${device.mobileM}{
+      font-size:11px;
+      margin-right:120px;
+      padding:13px;
+    }
     ${device.mobileL}{
-      width: 15rem;
-      height: 17rem;
-      padding: 5px;
+      padding:15px;
+      margin-right:100px;
+    }
+      
+    }
+    ${device.tablet}{
+      font-size:15px;
+      height:400px;
+      width:21rem;
     }
     `
 const ReviewSlider = styled.div`
@@ -136,22 +180,32 @@ const ReviewSlider = styled.div`
       margin: 0 auto;
       padding: 1rem;
       font-size: 1.25rem;
-      tran
       border-radius: 0.5rem;
       ::-webkit-scrollbar {
-        width: 12px;
-        height: 2px;
+        width: 5px;
+        height: 4px;
         color: #0B6E4F;
     }
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: #0B6E4F;
+        width:px;
         // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-    }
-    ${device.laptop}{
-      width: 22.5rem;
+     }
+     ${device.laptop}{
+      
       align-items: center;
       justify-content: center;
+    }
+    ${device.tablet}{
+      width:23rem;
+      height:25rem;
+
+    }
+    ${device.mobileM}{
+      width:20rem;
+      margin:8px;
+      padding:0.5rem;
     }
     `;
 const SubHeader = styled.div`
@@ -161,14 +215,20 @@ const SubHeader = styled.div`
   font-weight: 500;
   padding: 0;
   color: #5F5F5F;
-  ${device.tablet} {
-    font-size: 1rem;
   }
-
+  
+  
 `
 const Box = styled.div`
   display: flex;
+  
   flex-direction: row;
+  }
+  ${device.mobileM} {
+    padding:25px;
+    
+    }
+
 
 `
 const MainHeader = styled.div`
@@ -180,15 +240,21 @@ const MainHeader = styled.div`
   font-weight: 800;
   padding: 0;
   color: #0B6E4F;
+  }
   ${device.tablet} {
     font-size: 1.5rem;
   }
 
 `
 const ReviewContainer = styled(Container)`
-  min-height: 35rem;
-  padding: 1rem 0;
-  color: black;
-`;
+min-height: 35rem;
+padding: 1rem 0;
+color: black;
+}
+${device.mobileM}{
+  padding:0;
+  height:4orem;
+}
+`
 
 export default Reviews;
