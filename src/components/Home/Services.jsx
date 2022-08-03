@@ -59,6 +59,7 @@ const Services =()=>{
 //color: black;`
 
 const Wrapper = styled.section `
+margin-bottom:85px;
 display:flex;
           }
 ${device.mobileM}{

@@ -20,12 +20,15 @@ const CardData = [
 const Cards = () => {
   return (
     <Wrapper>
-      <StyledCards>
+ {/*     <StyledCards>
+        
         {CardData.map((item, index) => (
           <Card key={index} item={item} />
         ))}
+        
       </StyledCards>
-      <h1 style= {{marginLeft:"2rem", color:"rgb(26,26,26)"}}> A  Message  from  our  founder</h1>
+        */}
+  <h1 style= {{marginLeft:"2rem", color:"rgb(26,26,26)",marginTop:"65px"}}> A  Message  from  our  founder</h1>
       <Background>
       <StyledMsgs>
         
@@ -38,7 +41,6 @@ adipiscing elit, sed do eiusmod tempor incididunt ut labo.</p>
             <div style={{display: "flex",padding:"2rem",justifyContent: "space-between"}}>
               <StyledButton style = {{backgroundColor:"rgb(19,174,126)"}}>Explore courses</StyledButton>
               <StyledButton style = {{backgroundColor:"rgb(19,174,126)"}}>Test yourself</StyledButton>
-
             </div>
           
           </MessageBox2>
@@ -51,7 +53,7 @@ adipiscing elit, sed do eiusmod tempor incididunt ut labo.</p>
           </MessageBox>
          
       </StyledMsgs>
-      </Background>
+      </Background>      
       <StyledMsgs2>
         <Img src="/images/sneakpeakpic.svg" alt="sneak-peak"/>
         <MessageBox3>
@@ -83,10 +85,11 @@ adipiscing elit, sed do eiusmod tempor incididunt ut labo.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
       </StyledMsgs3>
+    
     </Wrapper>
   );
 };
-
+/*
 const Card = ({ item }) => {
   return (
     <StyledCard>
@@ -97,7 +100,7 @@ const Card = ({ item }) => {
     </StyledCard>
   );
 };
-
+*/
 const Background = styled.div`
 background-color:rgb(197,220,213);
 height:24rem;
@@ -117,14 +120,19 @@ const Wrapper = styled.section`
 `;
 
 const StyledCards = styled.div`
-  min-height: 32rem;
+border-radius:15px;
+  min-height: 29rem;
   color: black;
   margin-top: 64px;
+  margin-bottom:45px;
+  margin-left:55px;
+  margin-right:55px;
   display: flex;
   flex-wrap: wrap;
+  box-shadow:2px 2px 8px 10px rgb(240,239,239);
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 55px;
 `;
 
 const StyledMsgs = styled(Container)`
@@ -228,13 +236,13 @@ const StyledCard = styled.div`
     height: 18.5rem;
     object-fit: cover;
   }
-`;
+`
 
 const CardHeader = styled.h2`
   font-weight: 500;
   font-size: 20px;
   margin-top: 28px;
   text-align: center;
-`;
+`
 
 export default Cards;

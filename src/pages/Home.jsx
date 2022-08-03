@@ -1,8 +1,11 @@
 // import Bottom from "../components/Home/Bottom";
 import Cards from "../components/Home/Cards";
+import Middleframe from "../components/Home/Middleframe"
 import Reviews from "../components/Home/Reviews";
 import Services from "../components/Home/Services";
 import Carousel1 from "../components/Home/Carousel2";
+import Mobileapp from "../components/Home/Mobileapp";
+import Middlebox from "../components/Home/Middlebox";
 import Top from "../components/Home/Top";
 import Work from "../components/Home/Work";
 import Navbar from "../components/global/Navbar";
@@ -274,11 +277,15 @@ const handleMark = async () => {
       />}
       <Navbar />
       <Top />
-      <Cards />
+      <Middlebox/>
+      <Middleframe/>
       <Services/>
+      <Cards />
+      
       <Work />
       <Carousel1/>
       <Reviews />
+      <Mobileapp/>
       {/* <Bottom /> */}
       <Footer />
       <ChatbotContainer>
